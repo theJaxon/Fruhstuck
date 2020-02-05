@@ -1,0 +1,61 @@
+@font-face{
+    font-family: Jonesy;
+    src: url(../fonts/Jonesy.otf)
+}
+
+/*Font Awesome Icons CSS*/
+.fa-spoon{
+    font-size: 25px;
+    padding-right: 1%;
+    color: #61DDA9;
+}
+
+.fa-leaf{
+    color:#000000 ;
+}
+
+.login
+{
+    background-color: #61DDA9;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 5px 30px;
+
+}
+
+#signUp{
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px 20px;
+}
+
+#mainTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0% 2.5% 0% 2.5%; /*add maring to left and right of the title*/
+    border-radius: 10px;
+
+    background-color: #FAFAFA;
+}
+
+#mainTitle-div1{
+    font-family: Jonesy;
+    font-weight: 500;
+    width: 40%;
+    padding-left: 30px;
+    margin-right: 40px;
+}
+
+#mainTitle-div1 h2{
+    color: #FDBA13;
+}
+
+
+#mainTitle-div2{
+    width: 60%;
+    padding-top: 20px;
+}
