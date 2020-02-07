@@ -121,3 +121,189 @@
 .footer-dark{
     margin-top: 2.5%;
 }
+/* sign up and sign in */
+* {box-sizing: border-box}
+
+
+  input[type=text], input[type=password] {
+  width: 60%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: block;
+  border: none;
+  background: #f1f1f1;
+	  justify-content:center;
+	  
+}
+
+input[type=Date]{
+	display: block;
+	padding: 15px;
+	margin: 5px 10px 22px 0;
+	border: none;
+	background: #f1f1f1;
+	justify-content:center;
+	width: 180px;
+	
+}
+
+
+input[type=text]:focus, input[type=password]:focus ,input[type=Date]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+
+button:hover {animation-delay: 2s;
+  opacity:1;
+ 
+	
+}
+
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+
+.cancelbtn, .signupbtn {
+  float: left;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 5px 30px;
+
+}
+
+
+.container {
+padding: 16px;
+width: 80%;	
+}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  background-image:url(../images/regjpg.jpg);
+  background-size: 100% 100%;
+  	
+  padding-top: 50px;
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #888;
+  width: 80%; 
+  opacity: 0.5;	
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.close {
+  position:fixed;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.modal-content:hover{
+	opacity: 1;
+	transform: rotate(180 deg);
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+
+.modal2 {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; 
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+
+  
+
+
+
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 3s;
+    animation: animatezoom 3s
+}
+/*
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}*/
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+#date{
+	color:darkblue;
+	font: italic;
+	font-family:Algerian;
+	display: inline-block;
+}
+ #error1, #error2 ,#error3 ,#error4{
+	
+	font-family:Algerian;
+	font-size: 16px;
+	font: italic;
+	color: red;
+	
+}

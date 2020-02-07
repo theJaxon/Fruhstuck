@@ -16,19 +16,24 @@
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
         <div class="container">
             <i class="fa fa-spoon"></i>
-            <a class="navbar-brand" href="#"><strong>Frühstück</strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
+            <a class="navbar-brand" href="#"><strong>Frühstück</strong></a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Categories</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Breakfast</a><a class="dropdown-item" role="presentation" href="#">Lunch</a><a class="dropdown-item" role="presentation" href="#">Dinner</a></div>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                            aria-expanded="false" href="#">Categories</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation"
+                                href="#">Breakfast</a><a class="dropdown-item" role="presentation" href="#">Lunch</a><a
+                                class="dropdown-item" role="presentation" href="#">Dinner</a></div>
                     </li>
                 </ul>
-                <span class="navbar-text actions"> 
-                    <a class="login" href="#" style="color: #FFFFFF">Log In</a>
-                    <a class="btn btn-light action-button" id="signUp" role="button" href="#" style="background-color: #FFFFFF;color: #000000;">Sign Up</a>
+                <span class="navbar-text actions">
+                    <button onclick="document.getElementById('log').style.display='block'" class="login" style="color: #FFFFFF">Log In</button>
+                    <a class="btn btn-light action-button" id="signUp" role="button" href="#"
+                        style="background-color: #FFFFFF;color: #000000;">Sign Up</a>
                 </span>
             </div>
         </div>
@@ -49,7 +54,7 @@
     <!--Food preview list [3 items per row]-->
     <div id="recipesRow">
         <div class="recipescolumn1">
-            <img src="assets/Images/Food1.jpg" alt="" >
+            <img src="assets/Images/Food1.jpg" alt="">
             <h1>Recipe 1</h1>
             <input type="button" value="Button 1">
             <input type="button" value="Button 2">
@@ -90,14 +95,45 @@
                     </div>
                     <div class="col-md-6 item text">
                         <h3>Company Name</h3>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula
+                            rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum
+                            vel in justo.</p>
                     </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                                class="icon ion-social-twitter"></i></a><a href="#"><i
+                                class="icon ion-social-snapchat"></i></a><a href="#"><i
+                                class="icon ion-social-instagram"></i></a></div>
                 </div>
                 <p class="copyright">Company Name © 2017</p>
             </div>
         </footer>
     </div>
+    <div id="log" class="modal2">
+       
+        <form class="modal-content animate" >
+          
+      
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+      
+            <label for="psw"><b>Password</b></label>
+              
+        
+            <input type="password" placeholder="Enter Password" name="psw" required>
+      
+            <button type="submit"class="login" style="color: #FFFFFF">Log In </button>
+            
+          </div>
+      
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('log').style.display='none'" class="cancelbtn" >Cancel</button>
+            
+          </div>
+              
+        </form>
+           
+      </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
