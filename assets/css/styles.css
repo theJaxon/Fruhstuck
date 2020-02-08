@@ -39,7 +39,7 @@
     align-items: center;
     margin: 0% 2.5% 0% 2.5%; /*add maring to left and right of the title*/
     border-radius: 15px;
-    background-color: #FAFAFA;
+    background-color: #FFF9F0;
     margin-bottom: 2.5%;
 }
 
@@ -69,6 +69,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 2.5%;
+    background-color: #FFF9F0;
 }
 
 .recipescolumn1,
@@ -105,6 +106,7 @@
     cursor:pointer;
     margin-top: 5px; /*Floating effect*/
     box-shadow: 0 8px 6px -6px black;
+    background-color: #EAB97A;
 }
 
 .recipescolumn1 input,
