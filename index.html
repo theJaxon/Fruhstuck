@@ -13,42 +13,70 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-        <div class="container">
-            <i class="fa fa-spoon"></i>
-            <a class="navbar-brand" href="#"><strong>Frühstück</strong></a><button data-toggle="collapse"
+<nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+    <div class="container">
+        <i class="fa fa-spoon"></i>
+        <a class="navbar-brand" href="#"><strong>Frühstück</strong></a>
+        <button data-toggle="collapse"
                 class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
-                            aria-expanded="false" href="#">Categories</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation"
-                                href="#">Breakfast</a><a class="dropdown-item" role="presentation" href="#">Lunch</a><a
-                                class="dropdown-item" role="presentation" href="#">Dinner</a></div>
-                    </li>
-                </ul>
-                <span class="navbar-text actions">
-                    <button onclick="document.getElementById('log').style.display='block'" class="login" style="color: #FFFFFF">Log In</button>
-                    <a class="btn btn-light action-button" id="signUp" role="button" href="#"
-                        style="background-color: #FFFFFF;color: #000000;">Sign Up</a>
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item" role="presentation"></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                                 aria-expanded="false" href="#">Categories</a>
+                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation"
+                                                              href="#">Breakfast</a><a class="dropdown-item"
+                                                                                       role="presentation" href="#">Lunch</a><a
+                            class="dropdown-item" role="presentation" href="#">Dinner</a></div>
+                </li>
+            </ul>
+            <span class="navbar-text actions">
+                    <button onclick="document.getElementById('log').style.display='block'" class="login"
+                            style="color: #FFFFFF">Log In</button>
+                        <button onclick="document.getElementById('id01').style.display='block'" class="login"
+                                style="color: #FFFFFF">Sign Up</button>
                 </span>
-            </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <div id="mainTitle">
-        <div id="mainTitle-div1">
-            <h1>Make your own food</h1>
-            <h2>be your own chef <i class="fa fa-leaf"></i> </h2>
-        </div>
+<div id="mainTitle">
+    <div id="mainTitle-div1">
+        <h1>Make your own food</h1>
+        <h2>be your own chef <i class="fa fa-leaf"></i></h2>
+    </div>
 
-        <div id="mainTitle-div2">
-            <img src="assets/Images/Breafkast.svg" alt="Food" width="60%" height="50%">
-        </div>
+    <div id="mainTitle-div2">
+        <img src="assets/Images/Breafkast.svg" alt="Food" width="60%" height="50%">
+    </div>
 
+</div>
+
+<div class="add-recipe">
+    <button type="button" class="add" data-toggle="modal" data-target="#addRecipeModal">Add Recipe</button>
+
+</div>
+<!--Food preview list [3 items per row]-->
+<div id="recipesRow">
+    <div class="recipescolumn1">
+        <img src="assets/Images/Food1.jpg" alt="">
+        <h1>Recipe 1</h1>
+        <input type="button" value="Button 1">
+        <input type="button" value="Button 2">
+    </div>
+    <div class="recipescolumn2">
+        <img src="assets/Images/Food2.jpg" alt="" width="100%">
+        <h1>Recipe 2</h1>
+        <input type="button" value="Button 1">
+        <input type="button" value="Button 2">
+    </div>
+    <div class="recipescolumn3">
+        <img src="assets/Images/Food3.jpg" alt="" width="100%">
+        <h1>Recipe 3</h1>
+        <input type="button" value="Button 1">
+        <input type="button" value="Button 2">
     </div>
 
     <!--Food preview list [3 items per row]-->
@@ -84,72 +112,52 @@
           </div>
 
         </div>
+    </form>
 
-      </div>
+</div>
 
-    <div class="footer-dark">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="#">Web design</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Hosting</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>About</h3>
-                        <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 item text">
-                        <h3>Company Name</h3>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula
-                            rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum
-                            vel in justo.</p>
-                    </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
-                                class="icon ion-social-twitter"></i></a><a href="#"><i
-                                class="icon ion-social-snapchat"></i></a><a href="#"><i
-                                class="icon ion-social-instagram"></i></a></div>
-                </div>
-                <p class="copyright">Company Name © 2017</p>
+<div class="modal fade" id="addRecipeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">new Recipe</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </footer>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="images" class="col-form-label">Images:</label>
+                        <input type="file" class="form-control" id="images" multiple>
+                        <output id="resultImgs"></output>
+                        <div class="error-message">Recipe must have at least one image.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="title">
+                        <div class="error-message">Title is a required field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="details" class="col-form-label">Details:</label>
+                        <textarea class="form-control" id="details"></textarea>
+                        <div class="error-message">Recipe details are required.</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" id="add_recipe" class="btn btn-primary">Add Recipe</button>
+            </div>
+        </div>
     </div>
-    <div id="log" class="modal2">
-       
-        <form class="modal-content animate" >
-          
-      
-          <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-      
-            <label for="psw"><b>Password</b></label>
-              
-        
-            <input type="password" placeholder="Enter Password" name="psw" required>
-      
-            <button type="submit"class="login" style="color: #FFFFFF">Log In </button>
-            
-          </div>
-      
-          <div class="container" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('log').style.display='none'" class="cancelbtn" >Cancel</button>
-            
-          </div>
-              
-        </form>
-           
-      </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/Recipe.js"></script>
+<script src="assets/js/RecipeList.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>
