@@ -58,26 +58,6 @@
     <button type="button" class="add" data-toggle="modal" data-target="#addRecipeModal">Add Recipe</button>
 
 </div>
-<!--Food preview list [3 items per row]-->
-<div id="recipesRow">
-    <div class="recipescolumn1">
-        <img src="assets/Images/Food1.jpg" alt="">
-        <h1>Recipe 1</h1>
-        <input type="button" value="Button 1">
-        <input type="button" value="Button 2">
-    </div>
-    <div class="recipescolumn2">
-        <img src="assets/Images/Food2.jpg" alt="" width="100%">
-        <h1>Recipe 2</h1>
-        <input type="button" value="Button 1">
-        <input type="button" value="Button 2">
-    </div>
-    <div class="recipescolumn3">
-        <img src="assets/Images/Food3.jpg" alt="" width="100%">
-        <h1>Recipe 3</h1>
-        <input type="button" value="Button 1">
-        <input type="button" value="Button 2">
-    </div>
 
     <!--Food preview list [3 items per row]-->
     <div class="container">
@@ -114,25 +94,19 @@
         </div>
     </form>
 
-</div>
+      </div>
 
-<div class="modal fade" id="addRecipeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">new Recipe</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="images" class="col-form-label">Images:</label>
-                        <input type="file" class="form-control" id="images" multiple>
-                        <output id="resultImgs"></output>
-                        <div class="error-message">Recipe must have at least one image.</div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
                     </div>
                     <div class="form-group">
                         <label for="title" class="col-form-label">Title:</label>
