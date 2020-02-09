@@ -71,54 +71,44 @@
     background-color: #FFF9F0;
 }
 
-.recipescolumn1,
-.recipescolumn2,
-.recipescolumn3{
-    margin-top: 2.5%;
-    margin-right: 15px;
-    margin-bottom: 2.5%;
-    background-color: #FAFAFA;
-    width: 30%;
-    border-radius: 15px;
-    text-align: center;
-    
-    /*Floating effect*/
-    -webkit-transition: margin 0.5s ease-out;
-    -moz-transition: margin 0.5s ease-out;
-    -o-transition: margin 0.3s ease-out;
-    transition: margin 0.3s ease-out;
+
+
+.col-sm-4{
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  background-color: #FAFAFA;
+  border-radius: 15px;
+  
+  /*Floating effect*/
+  -webkit-transition: margin 0.5s ease-out;
+  -moz-transition: margin 0.5s ease-out;
+  -o-transition: margin 0.3s ease-out;
+  transition: margin 0.3s ease-out;
+} 
+
+.col-sm-4:hover{
+  cursor:pointer;
+  margin-top: 5px; /*Floating effect*/
+  box-shadow: 0 8px 6px -6px black;
+  background-color: #DE953C;
 }
 
-.recipescolumn1 img, 
-.recipescolumn2 img, 
-.recipescolumn3 img{
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 15px;
-    width: 100%;
-    height: 30%;
+/*Styling the row images*/
+.col-sm-4 img{
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
 }
 
-.recipescolumn1:hover,
-.recipescolumn2:hover,
-.recipescolumn3:hover{
-    cursor:pointer;
-    margin-top: 5px; /*Floating effect*/
-    box-shadow: 0 8px 6px -6px black;
-    background-color: #EAB97A;
+.col-sm-4 input{
+  display: none; /*Hide the buttons in any column by default*/
 }
 
-.recipescolumn1 input,
-.recipescolumn2 input,
-.recipescolumn3 input{
-    display: none;
+.col-sm-4:hover input{
+  display: inline; /*Display the buttons on hover*/
 }
 
-.recipescolumn1:hover input,
-.recipescolumn2:hover input,
-.recipescolumn3:hover input{
-    display: inline;
-}
+
 
 .footer-dark{
     margin-top: 2.5%;
@@ -158,7 +148,8 @@ input[type=text]:focus, input[type=password]:focus ,input[type=Date]:focus{
 
 
 
-button:hover {animation-delay: 2s;
+button:hover {
+  animation-delay: 2s;
   opacity:1;
  
 	
