@@ -23,6 +23,15 @@
     padding: 5px 30px;
 
 }
+.delete
+{
+    background-color: #ff0000;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 5px 30px;
+
+}
 
 #signUp{
     border-radius: 25px;
