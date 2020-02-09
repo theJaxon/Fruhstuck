@@ -1,18 +1,18 @@
 class RecipeList {
 
-    listCon = {};
+    all = {};
 
     add(recipe) {
-        this.listCon[recipe.id] = recipe;
-        console.log(this.listCon);
+        this.all[recipe.id] = recipe;
+        // console.log(this.all);
     }
 
     remove(id) {
-        delete this.listCon[id];
-        console.log(this.listCon);
+        delete this.all[id];
+        // console.log(this.all);
     }
 
-    update(id, obj) {
-        this.listCon[id] = obj;
+    update(id, recipe) {
+        this.all[id] = recipe;
     }
 }

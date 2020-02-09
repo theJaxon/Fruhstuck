@@ -59,42 +59,59 @@
 
 </div>
 
-    <!--Food preview list [3 items per row]-->
-    <div class="container">
+<!--Food preview list [3 items per row]-->
+<div class="container">
 
-        <div class="row">
-          <div class="col-sm-4  p-1 "  align="center">
+    <div class="row" id="recipes">
+        <div class="col-sm-4  p-1 recipe" align="center" hidden>
             <img src="assets/Images/Food1.jpg" alt="" width="100%">
             <h1>Recipe 1</h1>
             <input type="button" value="Button 1">
             <input type="button" value="Button 2">
-          </div>
+        </div>
 
-          <div class="col-sm-4 p-1"  align="center">
+        <div class="col-sm-4 p-1" align="center">
             <img src="assets/Images/Food2.jpg" alt="" width="100%">
             <h1>Recipe 2</h1>
             <input type="button" value="Button 1">
             <input type="button" value="Button 2">
-          </div>
+        </div>
 
-          <div class="col-sm-4 p-1"  align="center">
+        <div class="col-sm-4 p-1" align="center">
             <img src="assets/Images/Food2.jpg" alt="" width="100%">
             <h1>Recipe 2</h1>
             <input type="button" value="Button 1">
             <input type="button" value="Button 2">
-          </div>
+        </div>
 
-          <div class="col-sm-4 p-1"  align="center">
+        <div class="col-sm-4 p-1" align="center">
             <img src="assets/Images/Food3.jpg" alt="" width="100%">
             <h1>Recipe 3</h1>
             <input type="button" value="Button 1">
             <input type="button" value="Button 2">
-          </div>
-
         </div>
-    </form>
+        <div class="col-sm-4 p-1" align="center">
+            <img src="assets/Images/Food3.jpg" alt="" width="100%">
+            <h1>Recipe 3</h1>
+            <input type="button" value="Button 1">
+            <input type="button" value="Button 2">
+        </div>
+        <div class="col-sm-4 p-1" align="center">
+            <img src="assets/Images/Food3.jpg" alt="" width="100%">
+            <h1>Recipe 3</h1>
+            <input type="button" value="Button 1">
+            <input type="button" value="Button 2">
+        </div>
+        <div class="col-sm-4 p-1" align="center">
+            <img src="assets/Images/Food3.jpg" alt="" width="100%">
+            <h1>Recipe 3</h1>
+            <input type="button" value="Button 1">
+            <input type="button" value="Button 2">
+        </div>
+    </div>
 
-      </div>
+
+</div>
 
 <div class="footer-dark">
     <footer>
@@ -216,7 +233,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">new Recipe</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" id="closeRecipeModal" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
