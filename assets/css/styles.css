@@ -123,6 +123,53 @@
 .footer-dark{
     margin-top: 2.5%;
 }
+
+
+/*
+about.html styling
+*/
+
+#aboutUsHeader{
+  background-color: #9AEBC0;
+  border-radius: 15px;
+  margin: 0% 2.5%;
+  margin-top: 2.5%;
+  padding: 1% 0%;
+  text-align: center;
+}
+.fa-heart{
+  color: #DC1225;
+}
+
+.fa-quote-left,
+.fa-quote-right{
+  color:#31173E;
+}
+
+#fruhstuckTeam{
+  margin-top: 2.5%;
+  padding-left: 2.5%;
+}
+
+#meetTheTeam{
+  margin-bottom: 2.5%;
+}
+
+.teamRow{
+  font-family: sans-serif;
+  padding: 1%;
+  margin: 2.5%;
+  border-radius: 15px;
+  background-image: linear-gradient(to right, #54F1C0 , #0DBE88  );
+  color: white;
+}
+
+.teamRow img{
+  padding-bottom: 5%;
+}
+
+
+
 /* sign up and sign in */
 
 
