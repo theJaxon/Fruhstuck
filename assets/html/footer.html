@@ -38,29 +38,32 @@
 <button onclick="document.getElementById('log').style.display='none'" class="close" title="Close Modal">X</button>
 
 
-<form class="sign-modal-content  animate">
+<form onsubmit="return validateLogin();" class="sign-modal-content  animate">
 
 
     <div class="container" id="con">
         <h1>Log In</h1>
         <p>Please fill in this form to Log In.</p>
         <hr>
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        
+        <input type="text" placeholder="Enter Username" name="uname" id="login_user" >
+        <div id="userLogin_error"></div>
 
-        <label for="psw"><b>Password</b></label>
+       
 
 
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Enter Password" name="psw" id="login_password" >
+        <div id="passwordLogin_error"></div>
         <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
+            <input type="checkbox" checked="checked" name="remember" id="checkbox"> Remember me
         </label>
+        
         <hr>
 
 
         <!-- <button type="button" onclick="document.getElementById('log').style.display='none'"
                  class="cancelbtn">Cancel</button> -->
-        <button type="submit" class="login" style="color: #FFFFFF">Log In</button>
+        <button type="submit" class="login" style="color: #FFFFFF" id="login">Log In</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
 
     </div>
@@ -70,7 +73,7 @@
 </div>
 <div id="id01" class="register_modal sign">
     <button onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</button>
-    <form onsubmit="return Validate()" class="sign-modal-content animate" id="form">
+    <form onsubmit="return ValidateRegister()" class="sign-modal-content animate" id="form">
         <div class="container" id="con">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">

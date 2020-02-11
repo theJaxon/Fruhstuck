@@ -254,8 +254,8 @@ hr {
     margin-left: 23%;
 
     padding-top: 60px;
-    font-family: Jonesy;
-    src: url(../fonts/Jonesy.otf)
+    font-family: sans-serif; 
+    
 }
 
 /* Modal Content */
@@ -284,12 +284,14 @@ hr {
     to {transform: scale(1)}
 }
 
- #error1, #error2 ,#error3 ,#error4{
+ #user_error, #email_error ,#password_error ,#confirm_error,#passwordLogin_error,#userLogin_error,#checkbox_error {
 
 	font-family:Algerian;
 	font-size: 16px;
-	font: italic;
-	color: red;
+	font:bold;
+  color: red;
+  margin-bottom: 15px;
+  
 
 }
 
