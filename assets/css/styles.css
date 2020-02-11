@@ -4,6 +4,11 @@
     src: url(../fonts/Jonesy.otf)
 }
 
+@font-face{
+  font-family: GothamRoundedLight;
+  src: url(../fonts/GothamRoundedLight.otf);
+}
+
 /*Font Awesome Icons CSS*/
 .fa-spoon{
     font-size: 25px;
@@ -89,9 +94,6 @@
   border-radius: 15px;
 }
 
-.btn-primary{
-  background-color: #3326AE;
-}
 
 .col-md-5{
   margin-top: 2.5%;
@@ -134,10 +136,29 @@
     display: inline;
   }
 
-.recipeButton{ /*Hide the recipe buttons by default*/
-  display: none;
+.recipeButton{ 
+  background-color: #3326AE;
+  border-radius: 25px;
+  border-style: none;
+  padding: 10px 25px;
+  font-family: GothamRoundedLight;
 }
 
+.recipeButton:hover{
+  background-color: #6C71CC;
+}
+
+.buyButton{
+  background-color: #FF4F96;
+  border-radius: 25px;
+  border-style: none;
+  padding: 10px 25px;
+  font-family: GothamRoundedLight;
+}
+
+.buyButton:hover{
+  background-color: #E38BC3;
+}
 
 
 .footer-dark{
@@ -386,8 +407,6 @@ hr {
     border-radius: 25px;
     padding: 5px 30px;
     margin-left: 2.5%;
-
-
 }
 
 .error-message {
