@@ -27,7 +27,6 @@
     font-weight: bold;
     border-radius: 25px;
     padding: 5px 30px;
-
 }
 .delete
 {
@@ -148,6 +147,10 @@
   background-color: #6C71CC;
 }
 
+.recipeButton:hover .fa-chevron-right{
+  color: #FDBA13;
+}
+
 .buyButton{
   background-color: #FF4F96;
   border-radius: 25px;
@@ -159,7 +162,6 @@
 .buyButton:hover{
   background-color: #E38BC3;
 }
-
 
 .footer-dark{
     margin-top: 2.5%;
@@ -405,8 +407,18 @@ hr {
     color: #FFFFFF;
     font-weight: bold;
     border-radius: 25px;
-    padding: 5px 30px;
     margin-left: 2.5%;
+    font-family: GothamRoundedLight;
+    border-style: none;
+    padding: 10px 25px;
+}
+
+.add-recipe .add:hover{
+  background-color: #F9366C;
+}
+
+.add-recipe .add:hover .fa-plus{
+  color: #FDBA13;
 }
 
 .error-message {
