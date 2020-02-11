@@ -14,39 +14,35 @@
 </head>
 
 <body>
-    <div id="header"><!--Header content will be loaded here--></div>
-    <div id="mainTitle">
-        <div id="mainTitle-div1">
-            <h1>Make your own food</h1>
-            <h2>be your own chef <i class="fa fa-leaf"></i></h2>
-        </div>
-        <div id="mainTitle-div2">
-            <img src="assets/Images/Breakfast2.svg" alt="Food" width="60%" height="50%">
-        </div>
+<div id="header"><!--Header content will be loaded here--></div>
+<div id="mainTitle">
+    <div id="mainTitle-div1">
+        <h1>Make your own food</h1>
+        <h2>be your own chef <i class="fa fa-leaf"></i></h2>
     </div>
+    <div id="mainTitle-div2">
+        <img src="assets/Images/Breakfast2.svg" alt="Food" width="60%" height="50%">
+    </div>
+</div>
 
-    <div class="add-recipe">
-        <button type="button" class="add" data-toggle="modal" data-target="#addRecipeModal"><i class="fa fa-plus"></i> Add Recipe</button>
-    </div>
+<div class="add-recipe">
+    <button type="button" class="add" data-toggle="modal" data-target="#addRecipeModal"><i class="fa fa-plus"></i> Add
+        Recipe
+    </button>
+</div>
 
 <div class="container"> <!--Food preview list [3 items per row]-->
     <div class="row" id="recipes">
-        <div class="col-md-2  p-1 recipe" align="center" hidden>
-            <img src="assets/Images/Food1.jpg" alt="" width="100%">
-            <h1>Recipe 1</h1>
-            <div class="btn-wrapper">
-                <button class="btn btn-primary recipeButton">Teacher</button>
-                <button class="btn btn-success recipeButton">Student</button>
-            </div>
-        </div>
 
-        <div class="col-md-5 p-0" align="center">
+        <div class="col-md-5 p-0 recipe" align="center" hidden>
+            <a class="link" href="#">
             <img src="assets/Images/Food2.jpg" alt="" width="100%">
             <h1>Recipe 2</h1>
-            <div class="btn-wrapper">
-                <button class="btn btn-primary recipeButton">Teacher</button>
-                <button class="btn btn-success recipeButton">Student</button>
-            </div>
+<!--            <div class="btn-wrapper">-->
+<!--                <button class="btn btn-primary recipeButton">Teacher</button>-->
+<!--                <button class="btn btn-success recipeButton">Student</button>-->
+<!--            </div>-->
+            </a>
         </div>
 
         <div class="col-md-5 p-0" align="center">
@@ -102,7 +98,7 @@
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/Recipe.js"></script>
 <script src="assets/js/RecipeList.js"></script>
-    <script src="assets/js/loadHeaderFooter.js"></script>
+<script src="assets/js/loadHeaderFooter.js"></script>
 
 </body>
 </html>

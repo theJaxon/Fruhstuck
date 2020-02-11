@@ -98,6 +98,7 @@
         recipeCopy.removeAttribute("hidden");
         recipeCopy.getElementsByTagName("img")[0].src = recipe.images[0];
         recipeCopy.getElementsByTagName("h1")[0].innerHTML = recipe.title;
+        recipeCopy.getElementsByTagName("a")[0].href="details.html?id="+recipe.id;
         recipes_div.prepend(recipeCopy);
 
     }
@@ -109,7 +110,6 @@
 
     let stored_recipes = JSON.parse(localStorage.getItem("recipes"))["all"];
 
-    console.log(stored_recipes);
     recipes.all=stored_recipes;
     for (let recipe in stored_recipes) {
         appendRecipe(stored_recipes[recipe]);
