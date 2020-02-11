@@ -159,9 +159,29 @@
   font-family: GothamRoundedLight;
 }
 
+.fa-cart-plus,
+.fa-shopping-cart,
+.fa-chevron-right{
+  font-size: 20px;
+}
+
+.buyButton .fa-cart-plus{
+  display: none;
+}
+
 .buyButton:hover{
   background-color: #E38BC3;
 }
+
+.buyButton:hover .fa-cart-plus{
+  display: inline;
+  font-size: 20px;
+}
+
+.buyButton:hover .fa-shopping-cart{
+  display: none;
+}
+
 
 .footer-dark{
     margin-top: 2.5%;
