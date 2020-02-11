@@ -8,7 +8,7 @@
 .fa-spoon{
     font-size: 25px;
     padding-right: 1%;
-    color: #61DDA9;
+    color: #3326AE;
 }
 
 .fa-leaf{
@@ -17,7 +17,16 @@
 
 .login
 {
-    background-color: #61DDA9;
+    background-color: #3326AE;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 5px 30px;
+
+}
+.delete
+{
+    background-color: #ff0000;
     color: #FFFFFF;
     font-weight: bold;
     border-radius: 25px;
@@ -39,7 +48,7 @@
     align-items: center;
     margin: 0% 2.5% 0% 2.5%; /*add maring to left and right of the title*/
     border-radius: 15px;
-    background-color: #FFF9F0;
+    background-color: #F7F8FF;
     margin-bottom: 2.5%;
 }
 
@@ -74,39 +83,49 @@
 
 
 
-.col-sm-4{
+.col-md-5{
   margin-top: 2.5%;
-  margin-bottom: 2.5%;
-  background-color: #FAFAFA;
+  margin-bottom: 1%;
+  margin-right: 5%;
+  background-color: white;
   border-radius: 15px;
-  
-  /*Floating effect*/
-  -webkit-transition: margin 0.5s ease-out;
-  -moz-transition: margin 0.5s ease-out;
-  -o-transition: margin 0.3s ease-out;
-  transition: margin 0.3s ease-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 } 
 
-.col-sm-4:hover{
+.col-md-5:hover{
   cursor:pointer;
-  margin-top: 5px; /*Floating effect*/
-  box-shadow: 0 8px 6px -6px black;
-  background-color: #DE953C;
+  background-color: #F7F8FF;
 }
 
 /*Styling the row images*/
-.col-sm-4 img{
+.col-md-5 img{
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 15px;
+  width: 100%;
 }
 
-.col-sm-4 input{
+.col-md-5 input{
   display: none; /*Hide the buttons in any column by default*/
 }
 
-.col-sm-4:hover input{
+.col-md-5:hover input{
   display: inline; /*Display the buttons on hover*/
+}
+
+.btn-wrapper{ text-align:center; position: absolute; bottom: 0px; top: 0px; right:0px; left:0px; margin: 0 auto; width:100%;}
+.btn-wrapper:before{content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 50%;}
+
+  .col-md-5:hover button{ /*Show the buttons when hovering over any row*/
+    display: inline;
+  }
+
+.recipeButton{ /*Hide the recipe buttons by default*/
+  display: none;
 }
 
 
@@ -114,6 +133,59 @@
 .footer-dark{
     margin-top: 2.5%;
 }
+
+/*
+about.html styling
+*/
+
+#aboutUsHeader{
+  background-color: #F7F8FF;
+  border-radius: 15px;
+  margin: 0% 2.5%;
+  margin-top: 2.5%;
+  padding: 1% 0%;
+  text-align: center;
+}
+.fa-heart{
+  color: #DC1225;
+}
+
+.fa-quote-left,
+.fa-quote-right{
+  color:#31173E;
+}
+
+#fruhstuckTeam{
+  margin-top: 2.5%;
+  padding-left: 2.5%;
+}
+
+#meetTheTeam{
+  margin-bottom: 2.5%;
+  background-color: #F7F8FF;
+  border-radius: 15px;
+  margin-right: 50%;
+  padding: 1% 0.5%;
+}
+
+.teamRow{
+  font-family: sans-serif;
+  padding: 1%;
+  margin: 2.5%;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 10%;
+
+
+}
+
+.teamRow img{
+  padding-bottom: 5%;
+}
+
+
+
 /* sign up and sign in */
 
 
@@ -298,11 +370,13 @@ hr {
 
 .add-recipe .add
 {
-    background-color: #61DDA9;
+    background-color: #FF392B;
     color: #FFFFFF;
     font-weight: bold;
     border-radius: 25px;
     padding: 5px 30px;
+    margin-left: 2.5%;
+
 
 }
 
