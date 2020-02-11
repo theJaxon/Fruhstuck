@@ -13,14 +13,17 @@ const login = document.getElementById('login');
 const checkbox = document.getElementById('checkbox');
 const userLogin_error = document.getElementById('userLogin_error');
 const passwordLogin_error = document.getElementById('passwordLogin_error');
+const loginBtn=document.getElementById('loginBtn')
 var users;
+const emailRegix=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
 
 function register() {
     //localStorage.setItem('user_name', user_name.value);
     //localStorage.setItem('email', email.value);
     //localStorage.setItem('password', password.value);
     //localStorage.setItem('confirm_password', confirm_password.value);
-    if (nameVerify() && passwordVerify() && emailVerify()) {
+    if (nameVerify() && passwordVerify() && emailVerify() && ValidateEmail()) {
         users = JSON.parse(localStorage.getItem('Users')) || [];
         var userData = {
             Username: document.getElementById("user_name").value,
@@ -36,8 +39,10 @@ function register() {
 
 }
 
-function Login(event) {
-    event.preventDefault();
+function Login() {
+    validateLogin()
+  event.preventDefault();
+
     var flag = false;
 
     if (verifyLoginUser() && verifyLoginPassword()) {
@@ -78,7 +83,12 @@ function Login(event) {
 
         }
         if (flag == true) {
-            alert("welcome");
+            
+            document.getElementById('loginBtn').remove();
+            document.getElementById('signBtn').remove();
+            document.getElementById('log').remove();
+            document.getElementById('logoutBtn').style.display="block";
+            
         }
         else {
             alert("Error");
@@ -105,6 +115,13 @@ function ValidateRegister() {
         email.style.border = "1px solid red";
 
         email_error.textContent = "email is required";
+        email.focus();
+        return false;
+    }
+    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))){
+        email.style.border = "1px solid red";
+
+        email_error.textContent = "email not valid";
         email.focus();
         return false;
     }
@@ -136,12 +153,23 @@ function nameVerify() {
 }
 
 function emailVerify() {
-    if (email.value != "") {
+    if (email.value != "" ) {
         email.style.border = "1px solid blue";
 
         email_error.innerHTML = "";
         return true;
+
     }
+}
+function ValidateEmail() 
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
+  {
+    email.style.border = "1px solid blue";
+
+    email_error.innerHTML = "";
+    return (true)
+  }
 }
 
 function passwordVerify() {
