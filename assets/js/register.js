@@ -54,10 +54,10 @@ function Login() {
 
         for (var i = 0; i < retriveData.length; i++) {
 
-            console.log(retriveData[i].Username);
-            console.log(retriveData[i].Password);
-            console.log(login_password.value);
-            console.log(login_user.value);
+           // console.log(retriveData[i].Username);
+            //console.log(retriveData[i].Password);
+            //console.log(login_password.value);
+            //console.log(login_user.value);
 
 
 
@@ -83,6 +83,7 @@ function Login() {
 
         }
         if (flag == true) {
+            
             
             document.getElementById('loginBtn').remove();
             document.getElementById('signBtn').remove();
