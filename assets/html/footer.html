@@ -36,12 +36,12 @@
 </div>
 <div id="log" class="modal2 sign">
 
-<button onclick="document.getElementById('log').style.display='none'" class="close animate" title="Close Modal">X</button>
 
 
-<form  class="sign-modal-content  animate">
 
+<form  class="sign-modal-content  ">
 
+    <button class="close" title="Close Modal" id="close_log">X</button>
     <div class="container" id="con">
         <h1>Log In</h1>
         <p>Please fill in this form to Log In.</p>
@@ -73,8 +73,9 @@
 
 </div>
 <div id="id01" class="register_modal sign">
-    <button onclick="document.getElementById('id01').style.display='none'" class="close animate" title="Close Modal">X</button>
-    <form onsubmit="return ValidateRegister()" class="sign-modal-content animate" id="form">
+    
+    <form class="sign-modal-content" id="form">
+        <button  class="close " title="Close Modal" id="sign_close">X</button>
         <div class="container" id="con">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">

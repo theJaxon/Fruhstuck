@@ -14,11 +14,21 @@ const checkbox = document.getElementById('checkbox');
 const userLogin_error = document.getElementById('userLogin_error');
 const passwordLogin_error = document.getElementById('passwordLogin_error');
 const loginBtn=document.getElementById('loginBtn')
+const close_log=document.getElementById('close_log');
+const sign_close= document.getElementById('sign_close');
+const loginBtnn = document.getElementById("loginBtn");
+const signBtnn = document.getElementById('signBtn');
+const logOut = document.getElementById('logoutBtn');
 var users;
+var loginUser="";
+var loginpass="";
 const emailRegix=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
-function register() {
+function register(event) {
+    ValidateRegister();
+    event.preventDefault();
+    
     //localStorage.setItem('user_name', user_name.value);
     //localStorage.setItem('email', email.value);
     //localStorage.setItem('password', password.value);
@@ -33,13 +43,16 @@ function register() {
 
         users.push(userData);
         localStorage.setItem('Users', JSON.stringify(users));
+        document.getElementById('id01').style.display="none";
     }
+    //document.getElementById('id01').style.display="none";
 
 
 
 }
 
-function Login() {
+
+function Login(event) {
     validateLogin()
   event.preventDefault();
 
@@ -85,17 +98,34 @@ function Login() {
         if (flag == true) {
             
             
-            document.getElementById('loginBtn').remove();
-            document.getElementById('signBtn').remove();
-            document.getElementById('log').remove();
+            document.getElementById('loginBtn').style.display="none";
+            document.getElementById('signBtn').style.display="none";
+            document.getElementById('log').style.display="none";
             document.getElementById('logoutBtn').style.display="block";
+            loginUser=login_user.value;
+            loginpass=login_password.value;
+            localStorage.setItem('loginUser', loginUser);
+            localStorage.setItem('loginpass',loginpass);
+            console.log("ldddddddddd");
+            
+            console.log(loginUser);
+
+            console.log(loginpass);
+            
+
             
         }
         else {
             alert("Error");
+            document.getElementById('log').style.display="none";
         }
     }
 }
+
+
+
+
+
 
 
 
@@ -225,6 +255,36 @@ function verifyLoginPassword() {
     }
 }
 
+function createLoginButton(event){
+    event.preventDefault();
+    document.getElementById('log').style.display='block'
+}
+function createSignButton(event){
+    event.preventDefault();
+    document.getElementById('id01').style.display='block'
+}
+
+
+function closeLog(event){
+    event.preventDefault();
+    document.getElementById('log').style.display='none';
+}
+
+function closeSign(event){
+    event.preventDefault();
+    document.getElementById('id01').style.display='none';
+}
+function logOutBtn(e){
+    e.preventDefault();
+    document.getElementById('logoutBtn').style.display="none";
+    document.getElementById('loginBtn').style.display="inline-block";
+    document.getElementById('signBtn').style.display="inline-block";
+    localStorage.removeItem('loginUser');
+    localStorage.removeItem('loginpass');
+
+}
+
+
 user_name.addEventListener('blur', nameVerify, true);
 email.addEventListener('blur', emailVerify, true);
 password.addEventListener('blur', passwordVerify, true);
@@ -234,4 +294,9 @@ login_user.addEventListener('blur', verifyLoginUser, true);
 
 sign_up.addEventListener("click", register);
 login.addEventListener("click", Login);
+close_log.addEventListener("click",closeLog);
+sign_close.addEventListener('click',closeSign);
+loginBtnn.addEventListener('click',createLoginButton);
+signBtnn.addEventListener('click',createSignButton);
+logoutBtn.addEventListener('click',logOutBtn);
 
