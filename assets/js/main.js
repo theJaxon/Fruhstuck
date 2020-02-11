@@ -97,8 +97,9 @@
         let recipeCopy = recipes_div.getElementsByClassName("recipe")[0].cloneNode(true);
         recipeCopy.removeAttribute("hidden");
         recipeCopy.getElementsByTagName("img")[0].src = recipe.images[0];
-        recipeCopy.getElementsByTagName("h1")[0].innerHTML = recipe.title;
-        recipeCopy.getElementsByTagName("a")[0].href="details.html?id="+recipe.id;
+        recipeCopy.getElementsByTagName("h5")[0].innerHTML = recipe.title;
+        recipeCopy.getElementsByClassName("recipeButton")[0].href="details.html?id="+recipe.id;
+        recipeCopy.setAttribute("recipe_id",recipe.id);
         recipes_div.prepend(recipeCopy);
 
     }
@@ -108,13 +109,17 @@
     }
 
 
-    let stored_recipes = JSON.parse(localStorage.getItem("recipes"))["all"];
+    let stored_recipes = JSON.parse(localStorage.getItem("recipes"));
+    if(stored_recipes){
+        stored_recipes = stored_recipes["all"];
 
-    recipes.all=stored_recipes;
-    for (let recipe in stored_recipes) {
-        appendRecipe(stored_recipes[recipe]);
-        id=recipe;
+        recipes.all=stored_recipes;
+        for (let recipe in stored_recipes) {
+            appendRecipe(stored_recipes[recipe]);
+            id=recipe;
+        }
     }
+
 
 
 
