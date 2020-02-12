@@ -26,14 +26,17 @@ const emailRegix=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
 function register(event) {
-    ValidateRegister();
+    
+   
+    
     event.preventDefault();
+    ValidateRegister();
     
     //localStorage.setItem('user_name', user_name.value);
     //localStorage.setItem('email', email.value);
     //localStorage.setItem('password', password.value);
     //localStorage.setItem('confirm_password', confirm_password.value);
-    if (nameVerify() && passwordVerify() && emailVerify() && ValidateEmail()) {
+    if (nameVerify() && passwordVerify() && emailVerify() && ValidateEmail() && confirmVerify()) {
         users = JSON.parse(localStorage.getItem('Users')) || [];
         var userData = {
             Username: document.getElementById("user_name").value,
@@ -62,7 +65,7 @@ function Login(event) {
         var retriveData = [];
 
         retriveData = JSON.parse(localStorage.getItem('Users'));
-        console.log(retriveData);
+        
 
 
         for (var i = 0; i < retriveData.length; i++) {
@@ -209,6 +212,8 @@ function passwordVerify() {
         password_error.innerHTML = "";
         return true;
     }
+}
+    function confirmVerify(){
     if (password.value == confirm_password.value) {
         password.style.border = "1px solid blue";
 
@@ -217,6 +222,7 @@ function passwordVerify() {
     }
 
 }
+
 
 
 
