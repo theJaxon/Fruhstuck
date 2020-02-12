@@ -1,27 +1,45 @@
 var myCart = document.getElementsByClassName("dropdown-menu");
 var buyButtonList = document.getElementsByClassName("buyButton");
 
-buyButtonList[0].addEventListener("click", buyButtonClicked);
-buyItemsList = [];
+for(i = 0; i < buyButtonList.length; i++){
+    buyButtonList[i].addEventListener("click", buyButtonClicked);
+}
+
+
+let storageList = JSON.parse(localStorage.getItem("buyList"));
+
+if(storageList){
+   
+}else{
+    storageList={};
+}
+
+// {1:{recipe_id:1,qty:1},2:{recipe_id:2,qty:2}}
 
 function buyButtonClicked(){
-    buyItemsList.push("LOL1")
-    localStorage.setItem("buyList", JSON.stringify(buyItemsList));
+    let id=this.parentNode.parentNode.getAttribute("recipe_id");
+    if(storageList[id]){
+        let old=storageList[id];
+        old["qty"]++;
+        storageList[id]=old
+      
+    }else{
+        let title=recipes["all"][id]["title"];
+        storageList[id]={"recipe_id":id,"title":title,"qty":1};
+    }
+    console.log(storageList);
+    localStorage.setItem("buyList", JSON.stringify(storageList));
+    // buyItemsList.push("LOL1")
+   
 
     //Iterate over the localStorage and display the items
-    let storageList = JSON.parse(localStorage.getItem("buyList"))
-    for(i = 0; i < storageList.length; i++)
-    {
-        myCart[0].innerHTML += "<a class=\"dropdown-item\" role=\"presentation\" href=\"#\">"+ storageList[i] +"</a>"
-    }
+   
 }
 
-function init(){
-    let storageList = JSON.parse(localStorage.getItem("buyList"))
-    for(i = 0; i < storageList.length; i++)
-    {
-        myCart[0].innerHTML += "<a class=\"dropdown-item\" role=\"presentation\" href=\"#\">"+ storageList[i] +"</a>"
-    }
-}
+  
+ for(i in storageList)
+ {
+     console.log(storageList[i])
+     myCart[0].innerHTML += "<a class=\"dropdown-item\" role=\"presentation\" href=\"#\">"+ storageList[i]["title"] + " &nbsp; <i class=\"fa fa-hashtag\"></i> " +  storageList[i]["qty"]  +"</a>"
+ }
 
-init();
