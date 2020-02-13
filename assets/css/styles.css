@@ -1,13 +1,19 @@
+* {box-sizing: border-box}
 @font-face{
     font-family: Jonesy;
     src: url(../fonts/Jonesy.otf)
+}
+
+@font-face{
+  font-family: GothamRoundedLight;
+  src: url(../fonts/GothamRoundedLight.otf);
 }
 
 /*Font Awesome Icons CSS*/
 .fa-spoon{
     font-size: 25px;
     padding-right: 1%;
-    color: #61DDA9;
+    color: #3326AE;
 }
 
 .fa-leaf{
@@ -16,12 +22,11 @@
 
 .login
 {
-    background-color: #61DDA9;
+    background-color: #3326AE;
     color: #FFFFFF;
     font-weight: bold;
     border-radius: 25px;
     padding: 5px 30px;
-
 }
 .delete
 {
@@ -46,9 +51,9 @@
     justify-content: center;
     align-items: center;
     margin: 0% 2.5% 0% 2.5%; /*add maring to left and right of the title*/
-    border-radius: 10px;
-
-    background-color: #FAFAFA;
+    border-radius: 15px;
+    background-color: #F7F8FF;
+    margin-bottom: 2.5%;
 }
 
 #mainTitle-div1{
@@ -84,4 +89,405 @@
 
   :before {
     box-sizing: border-box;
+  }
+
+/*Recipes row*/
+#recipesRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5%;
+    background-color: #FFF9F0;
+}
+
+.cardColumn{
+  width: 100%;
+  border-radius: 15px;
+}
+
+.cardColumn img{
+  border-radius: 15px;
+}
+
+#recipes img{
+  width: 100%;
+  height: 250px;
+}
+
+
+.col-md-5{
+  margin-top: 2.5%;
+  margin-bottom: 1%;
+  margin-right: 5%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+} 
+
+.col-md-5:hover{
+  cursor:pointer;
+  background-color: #F7F8FF;
+}
+
+/*Styling the row images*/
+.col-md-5 img{
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.col-md-5 input{
+  display: none; /*Hide the buttons in any column by default*/
+}
+
+.col-md-5:hover input{
+  display: inline; /*Display the buttons on hover*/
+}
+
+.btn-wrapper{ text-align:center; position: absolute; bottom: 0px; top: 0px; right:0px; left:0px; margin: 0 auto; width:100%;}
+.btn-wrapper:before{content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 50%;}
+
+  .col-md-5:hover button{ /*Show the buttons when hovering over any row*/
+    display: inline;
+  }
+
+.recipeButton{ 
+  background-color: #3326AE;
+  border-radius: 25px;
+  border-style: none;
+  padding: 10px 25px;
+  font-family: GothamRoundedLight;
+}
+
+.recipeButton:hover{
+  background-color: #6C71CC;
+}
+
+.recipeButton:hover .fa-chevron-right{
+  color: #FDBA13;
+}
+
+.buyButton{
+  background-color: #FF4F96;
+  border-radius: 25px;
+  border-style: none;
+  padding: 10px 25px;
+  font-family: GothamRoundedLight;
+}
+
+.fa-cart-plus,
+.fa-shopping-cart,
+.fa-chevron-right{
+  font-size: 20px;
+}
+
+.fa-credit-card{
+  color: #FFAACC;
+}
+
+.fa-home{
+  color: #A8B0F3;
+}
+
+.buyButton .fa-cart-plus{
+  display: none;
+}
+
+.buyButton:hover{
+  background-color: #E38BC3;
+}
+
+.buyButton:hover .fa-cart-plus{
+  display: inline;
+  font-size: 20px;
+}
+
+.buyButton:hover .fa-shopping-cart{
+  display: none;
+}
+
+
+.footer-dark{
+    margin-top: 2.5%;
+}
+
+/*
+about.html styling
+*/
+
+#aboutUsHeader{
+  background-color: #F7F8FF;
+  border-radius: 15px;
+  margin: 0% 2.5%;
+  margin-top: 2.5%;
+  padding: 1% 0%;
+  text-align: center;
+}
+.fa-heart{
+  color: #DC1225;
+}
+
+.fa-quote-left,
+.fa-quote-right{
+  color:#31173E;
+}
+
+#fruhstuckTeam{
+  margin-top: 2.5%;
+  padding-left: 2.5%;
+}
+
+#meetTheTeam{
+  margin-bottom: 2.5%;
+  background-color: #F7F8FF;
+  border-radius: 15px;
+  margin-right: 50%;
+  padding: 1% 0.5%;
+}
+
+.teamRow{
+  font-family: sans-serif;
+  padding: 1%;
+  margin: 2.5%;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 10%;
+
+
+}
+
+.teamRow img{
+  padding-bottom: 5%;
+}
+
+
+
+/* sign up and sign in */
+
+
+
+  .sign input[type=text], .sign [type=password], .sign [type=email]{
+  width: 70%;
+  padding: 7px;
+
+  margin: 5px 0 22px 0;
+  display: block;
+  border: none;
+  background: #f1f1f1;
+	justify-content:center;
+
+}
+button {
+  border: none;
+}
+
+
+
+
+.sign input[type=text]:focus, .sign input[type=password]:focus , .sign input[type=Date]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+
+button:hover {animation-delay: 1s;
+  opacity:1;
+
+
+}
+
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+
+.cancelbtn, .signupbtn {
+  float: left;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 5px 30px;
+
+}
+
+
+#con {
+padding: 16px;
+width: 80%;
+}
+
+
+.register_modal {
+  display: none;
+  position:fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  
+  margin-left: 23%;
+  font-family: sans-serif;                                                                                    
+  overflow: auto;
+  padding-top: 60px;
+
+
+
+}
+
+
+
+
+
+hr {
+  border: 2px solid #f1f1f1;
+  margin-bottom: 20px;
+}
+#logoutBtn{
+  display: none;
+}
+
+
+.close {
+  position:absolute;
+  right: 80px;
+  margin-top: 10px;
+  
+ 
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+
+
+
+
+
+    border-radius: 25px;
+    padding: 5px 30px;
+
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*.modal-content:hover{
+	opacity: 1;
+	transform: rotate(180 deg);
+}*/
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    margin-left: 23%;
+
+    padding-top: 60px;
+    font-family: sans-serif; 
+    
+}
+
+/* Modal Content */
+.sign-modal-content {
+    background-color: #fefefe;
+    margin: 5px auto;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+
+
+
+
+
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 1s;
+    animation: animatezoom 1s
+}
+
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+ #user_error, #email_error ,#password_error ,#confirm_error,#passwordLogin_error,#userLogin_error,#checkbox_error {
+
+	font-family:Algerian;
+	font-size: 16px;
+	font:bold;
+  color: red;
+  margin-bottom: 10px;
+  
+  
+
+}
+
+
+.add-recipe .add
+{
+    background-color: #FF392B;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-left: 2.5%;
+    font-family: GothamRoundedLight;
+    border-style: none;
+    padding: 10px 25px;
+}
+
+.add-recipe .add:hover{
+  background-color: #F9366C;
+}
+
+.add-recipe .add:hover .fa-plus{
+  color: #FDBA13;
+}
+
+.error-message {
+    color: #cc0033;
+    display: none;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 5px 0 0;
+}
+
+.preview-img{
+    width: 150px;
+}
+.preview{
+    display: inline-block;
+    margin: 16px 5px 0 0;
 }

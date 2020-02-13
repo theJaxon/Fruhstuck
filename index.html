@@ -1,86 +1,109 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>fruhstuck</title>
+    <title>Fruhstuck</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/jquery.min.js"></script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-        <div class="container">
-            <i class="fa fa-spoon"></i>
-            <a class="navbar-brand" href="#"><strong>Frühstück</strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Categories</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Breakfast</a><a class="dropdown-item" role="presentation" href="#">Lunch</a><a class="dropdown-item" role="presentation" href="#">Dinner</a></div>
-                    </li>
-                </ul>
-                <span class="navbar-text actions"> 
-                    <a class="login" href="#" style="color: #FFFFFF">Log In</a>
-                    <a class="btn btn-light action-button" id="signUp" role="button" href="#" style="background-color: #FFFFFF;color: #000000;">Sign Up</a>
-                </span>
+<div id="header"><!--Header content will be loaded here--></div>
+<div id="mainTitle">
+    <div id="mainTitle-div1">
+        <h1>Make your own food</h1>
+        <h2>be your own chef <i class="fa fa-leaf"></i></h2>
+    </div>
+    <div id="mainTitle-div2">
+        <img src="assets/Images/Breakfast2.svg" alt="Food" width="60%" height="50%">
+    </div>
+</div>
+
+<div class="add-recipe">
+    <button type="button" class="add" data-toggle="modal" data-target="#addRecipeModal"><i class="fa fa-plus"></i> Add
+        Recipe
+    </button>
+</div>
+
+<div class="container"> <!--Food preview list [3 items per row]-->
+    <div class="row" id="recipes">
+        <div class="card col-md-5 p-0 recipe cardColumn text-center" hidden>
+            <img src="assets/Images/Food2.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary recipeButton">  <i class="fa fa-chevron-right"></i> Show</a>
+              <a class="btn btn-primary buyButton">
+                  <i class="fa fa-shopping-cart"></i> 
+                  <i class="fa fa-cart-plus"></i>
+                   Add to cart
+              </a>
             </div>
         </div>
-    </nav>
 
-    <div id="mainTitle">
-        <div id="mainTitle-div1">
-            <h1>Make your own food</h1>
-            <h2>be your own chef <i class="fa fa-leaf"></i> </h2>
-        </div>
-
-        <div id="mainTitle-div2">
-            <img src="assets/Images/Breafkast.svg" alt="Food" width="60%" height="50%">
-        </div>
-
-    </div>
-
-    <div>
-
-    </div>
-    <div class="footer-dark">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="#">Web design</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Hosting</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>About</h3>
-                        <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 item text">
-                        <h3>Company Name</h3>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
-                    </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
-                </div>
-                <p class="copyright">Company Name © 2017</p>
+          <div class="card col-md-5 p-0 cardColumn text-center">
+            <img src="assets/Images/Food3.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary recipeButton"> <i class="fa fa-chevron-right"></i> Go somewhere</a>
+              <a class="btn btn-primary buyButton">  <i class="fa fa-shopping-cart"></i> <i class="fa fa-cart-plus"></i> Add to cart</a>
             </div>
-        </footer>
+          </div>
+
+          <div class="card col-md-5 p-0 cardColumn text-center">
+            <img src="assets/Images/Food1.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary recipeButton"> <i class="fa fa-chevron-right"></i> Go somewhere</a>
+              <a href="#" class="btn btn-primary buyButton"> <i class="fa fa-shopping-cart"></i> <i class="fa fa-cart-plus"></i> Add to cart</a>
+            </div>
+          </div>
+
+
+        <div class="card col-md-5 p-0 cardColumn text-center">
+            <img src="assets/Images/Food2.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary recipeButton"> <i class="fa fa-chevron-right"></i> Go somewhere</a>
+              <a href="#" class="btn btn-primary buyButton">  <i class="fa fa-shopping-cart"></i> <i class="fa fa-cart-plus"></i> Add to cart</a>
+            </div>
+        </div>
+        <div class="card col-md-5 p-0 cardColumn text-center">
+            <img src="assets/Images/Food2.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary recipeButton"> <i class="fa fa-chevron-right"></i> Go somewhere</a>
+              <a href="#" class="btn btn-primary buyButton">  <i class="fa fa-shopping-cart"></i> <i class="fa fa-cart-plus"></i> Add to cart</a>
+            </div>
+          </div>
+          <div class="card col-md-5 p-0 cardColumn text-center">
+            <img src="assets/Images/Food1.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary recipeButton"> <i class="fa fa-chevron-right"></i> Go somewhere</a>
+              <a href="#" class="btn btn-primary buyButton">  <i class="fa fa-shopping-cart"></i> <i class="fa fa-cart-plus"></i> Add to cart</a>
+            </div>
+          </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</div>
+
+
+<div id="footer"><!--Footer content loaded with JQuery + LiveReload--></div>
+
+
+</div>
+
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/Recipe.js"></script>
+<script src="assets/js/RecipeList.js"></script>
+<script src="assets/js/loadHeaderFooter.js"></script>
+<!-- <script src="assets/js/register.js"></script> -->
+
+
 </body>
-
 </html>
