@@ -29,18 +29,19 @@ let selectedRecipe = allRecipes[selectedRecipe_id]
 console.log(selectedRecipe);
 
 let imgArr = selectedRecipe["images"]
-let first_img = imgArr[0]
+let current_img = imgArr[0]
+recipe_imges.src = current_img
 
-console.log(imgArr);
-
-
-recipe_imges.src = first_img
+setInterval(imgSide, 1000)
+var i = 0
+function imgSide() {
+    if (i == imgArr.length) { i = 0 }
+    current_img = imgArr[i]
+    recipe_imges.src = current_img
+    i++
+}
 
 
 recipe_title.innerHTML = selectedRecipe["title"]
-
-
 Ingredients.innerHTML = selectedRecipe["details"]
-
-
 Directions.innerHTML
