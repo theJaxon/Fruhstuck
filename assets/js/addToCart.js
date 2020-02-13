@@ -29,14 +29,12 @@ function buyButtonClicked(){
     myCart[0].innerHTML = ""; //Empty the list first.
 
     for(i in storageList){
-        console.log(storageList[i])
         myCart[0].innerHTML += "<a class=\"dropdown-item\" role=\"presentation\" href=\"#\">"+ storageList[i]["title"] + " &nbsp; <i class=\"fa fa-hashtag\"></i> " +  storageList[i]["qty"]  +"</a>"
     }
 
 }
 
  for(i in storageList){
-     console.log(storageList[i])
      myCart[0].innerHTML += "<a class=\"dropdown-item\" role=\"presentation\" href=\"#\">"+ storageList[i]["title"] + " &nbsp; <i class=\"fa fa-hashtag\"></i> " +  storageList[i]["qty"]  +"</a>"
  }
 
