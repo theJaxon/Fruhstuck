@@ -1,10 +1,11 @@
 class Recipe {
 
-    constructor(id, images, title, details) {
+    constructor(id, images, title, ingredients, directions) {
         this.id = ++id;
         this.images = images;
         this.title = title;
-        this.details = details;
+        this.ingredients = ingredients;
+        this.directions = directions;
     }
 
 
