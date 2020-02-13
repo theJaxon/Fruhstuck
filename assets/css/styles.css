@@ -267,6 +267,63 @@ about.html styling
   padding-bottom: 5%;
 }
 
+/*
+  profile.html styling begin
+*/
+.profileMainNavBar{
+  border-style: none;
+}
+
+.profileNavBar{
+  margin: 0% 2.5%;
+  border-radius: 15px;
+  border-style: none;
+  margin-bottom: 1.5%;
+}
+
+.profileContainer{
+  border-radius: 20px;
+}
+
+.profileSection {
+  background-color: #AB8FF5;
+  color: white;
+  font-family: GothamRoundedLight;
+  border-radius: 50px;
+}
+
+.profileTab{
+  background-color: red;
+}
+
+.userBody{
+  margin: 0% 30%;
+  color: white;
+  border-radius: 20px 20px 100px 20px;
+  background-image: url("../Images/Ent.svg");
+}
+
+.recipesButton{
+  background-color: #F9366C;
+  border-style: none;
+  border-radius: 25px;
+  padding: 1% 5%;
+  font-family: GothamRoundedLight;
+}
+
+.recipesButton:hover{
+  background-color: #EA6994;
+}
+
+.recipesButton:hover .fa-envira {
+  color: #FDBA13;
+}
+
+
+
+/*
+  profile.html styling end
+*/
 
 
 /* sign up and sign in */
