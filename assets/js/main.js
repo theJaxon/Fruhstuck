@@ -110,6 +110,7 @@ function saveRecipes() {
 
 
 let stored_recipes = JSON.parse(localStorage.getItem("recipes"));
+
 if (stored_recipes) {
     stored_recipes = stored_recipes["all"];
 
