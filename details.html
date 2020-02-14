@@ -74,48 +74,6 @@
 
 
 <!-- =========================================================================== -->
-<div class="modal fade" id="updateRecipeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Update Recipe</h5>
-                <button type="button" id="closeRecipeModal" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="images" class="col-form-label">Images:</label>
-                        <input type="file" class="form-control" id="images" multiple>
-                        <output id="resultImgs"></output>
-                        <div class="error-message">Recipe must have at least one image.</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="title" class="col-form-label">Title:</label>
-                        <input type="text" class="form-control" id="title">
-                        <div class="error-message">Title is a required field.</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="ingredients" class="col-form-label">Ingredients:</label>
-                        <textarea class="form-control" id="ingredients"></textarea>
-                        <div class="error-message">Recipe ingredients are required.</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="directions" class="col-form-label">Directions:</label>
-                        <textarea class="form-control" id="directions"></textarea>
-                        <div class="error-message">Recipe directions are required.</div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" id="add_recipe" class="btn btn-primary">Add Recipe</button>
-            </div>
-        </div>
-    </div>
-</div>
 <div id="footer"><!--Footer content loaded with JQuery + LiveReload--></div>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/Recipe.js"></script>

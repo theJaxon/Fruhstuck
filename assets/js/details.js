@@ -14,7 +14,20 @@ function updateRecipe(event) {
     if (recipe_id) {
         let recipe=recipes["all"][recipe_id];
         console.log(recipe)
-
-        $("#updateRecipeModal").modal();
+        fillUpdateRecipe(recipe)
+        $("#addRecipeModal").modal();
     }
+}
+
+function fillUpdateRecipe(recipe) {
+    for(let i=0;i<recipe.images.length;i++){
+        var div = document.createElement("div");
+        div.classList.add("preview");
+        div.innerHTML = "<img class='thumbnail preview-img' src='" + recipe.images[i] + "'/>";
+        images_output.insertBefore(div, null);
+    }
+
+    title.value = recipe.title;
+    ingredients.value = recipe.ingredients;
+    directions.value = recipe.directions;
 }
