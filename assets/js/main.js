@@ -8,7 +8,11 @@ let recipes_div = document.getElementById("recipes");
 let recipes = new RecipeList();
 /**********************************************************************/
 // add comment list
+//if (!localStorage.comments) {
 let comments = new CommentList();
+//} else {
+//    new CommentList() = JSON.parse(localStorage.comments)
+//}
 /**********************************************************************/
 // add recipe event listener
 document.getElementById("add_recipe").addEventListener("click", addRecipe);
@@ -134,7 +138,19 @@ if (stored_recipes) {
         id = recipe;
     }
 }
+/********************************************************** */
+let stored_comments = JSON.parse(localStorage.getItem("comments"));
 
+if (stored_comments) {
+    stored_comments = stored_comments["all"];
+
+    comments.all = stored_comments;
+    for (let comments in stored_comments) {
+
+
+        id = comments;
+    }
+}
 
 
 
