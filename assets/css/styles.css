@@ -467,6 +467,32 @@ hr {
     border-style: none;
     padding: 10px 25px;
 }
+#add-comment
+{
+    background-color: #3326ae;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-left: 2.5%;
+    font-family: GothamRoundedLight;
+    border-style: none;
+    padding: 5px 55px;
+}
+
+.comment-section{
+  border: 1.5px solid #3326ae;
+			border-radius: 2px;
+			width: 100%;
+			color: #000000;
+			text-align: left;
+      padding: 10px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+}
+
+#displayed_comments li {
+  list-style-type: none;
+}
 
 .add-recipe .add:hover{
   background-color: #F9366C;

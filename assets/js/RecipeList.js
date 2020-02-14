@@ -16,3 +16,11 @@ class RecipeList {
         this.all[id] = recipe;
     }
 }
+/****************************************************************** */
+class CommentList {
+    all = {};
+
+    add(recipe) {
+        this.all[recipe.id] = [];
+    }
+}

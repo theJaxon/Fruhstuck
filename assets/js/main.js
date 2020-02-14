@@ -6,7 +6,13 @@ let images_output = document.getElementById("resultImgs");
 let all_images = [];
 let recipes_div = document.getElementById("recipes");
 let recipes = new RecipeList();
+/**********************************************************************/
+// add comment list
+let comments = new CommentList();
+/**********************************************************************/
+// add recipe event listener
 document.getElementById("add_recipe").addEventListener("click", addRecipe);
+
 images.addEventListener("change", previewImages);
 let id = 1;
 
@@ -17,6 +23,10 @@ function addRecipe(event) {
     if (validateRecipe()) {
         let recipe = new Recipe(id, all_images, title.value, details.value);
         recipes.add(recipe);
+        /**********************************************************************/
+        //add recipe ID to comments list
+        comments.add(recipe);
+        /**********************************************************************/
         // save recipes list to local storage
         saveRecipes();
         // view the new recipe in the html page
@@ -106,6 +116,10 @@ function appendRecipe(recipe) {
 
 function saveRecipes() {
     localStorage.setItem("recipes", JSON.stringify({ all: recipes.all }));
+    /**********************************************************************/
+    // store comments in local storage
+    localStorage.setItem("comments", JSON.stringify({ all: comments.all }));
+    /**********************************************************************/
 }
 
 
