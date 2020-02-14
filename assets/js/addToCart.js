@@ -54,7 +54,9 @@ for(i = 0; i < deleteButtonList.length; i++){
     deleteButtonList[i].addEventListener("click", deleteButtonClicked);
 }
 
-function deleteButtonClicked(){
-    
+function deleteButtonClicked(e){
+    //remove the row from UI
+    var link = e.target.parentNode;
+    link.parentNode.removeChild(link);
 }
 
