@@ -2,6 +2,7 @@
 let title = document.getElementById("title");
 let ingredients = document.getElementById("ingredients");
 let directions = document.getElementById("directions");
+
 let images = document.getElementById("images");
 let images_output = document.getElementById("resultImgs");
 let all_images = [];
@@ -17,6 +18,7 @@ function addRecipe(event) {
     // check all recipe data are valid
     if (validateRecipe()) {
         let recipe = new Recipe(id, all_images, title.value, ingredients.value,directions.value);
+
         recipes.add(recipe);
         // save recipes list to local storage
         saveRecipes();
@@ -62,6 +64,7 @@ function validateRecipe() {
         valid = false;
     } else {
         directions.nextElementSibling.style.display = "none";
+
     }
 
     return valid;
@@ -98,6 +101,7 @@ function cleanRecipeModal() {
     title.value = "";
     ingredients.value = "";
     directions.value = "";
+
     images.value = "";
     images_output.innerHTML = "";
 }
@@ -121,12 +125,24 @@ function appendRecipe(recipe) {
 
 function saveRecipes() {
     localStorage.setItem("recipes", JSON.stringify({all: recipes.all}));
+    let recipeCopy = recipes_div.getElementsByClassName("recipe")[0].cloneNode(true);
+    recipeCopy.removeAttribute("hidden");
+    recipeCopy.getElementsByTagName("img")[0].src = recipe.images[0];
+    recipeCopy.getElementsByTagName("h5")[0].innerHTML = recipe.title;
+    recipeCopy.getElementsByClassName("recipeButton")[0].href = "details.html?id=" + recipe.id;
+    recipeCopy.setAttribute("recipe_id", recipe.id);
+    recipes_div.prepend(recipeCopy);
+
 }
+
+
+
 
 
 let stored_recipes = JSON.parse(localStorage.getItem("recipes"));
 if (stored_recipes) {
     stored_recipes = stored_recipes["all"];
+
 
     recipes.all = stored_recipes;
     for (let recipe in stored_recipes) {
@@ -134,6 +150,7 @@ if (stored_recipes) {
         id = recipe;
     }
 }
+
 
 
 //
