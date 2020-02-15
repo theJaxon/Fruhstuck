@@ -34,12 +34,13 @@
         </div>
     </footer>
 </div>
-<div id="log" class="modal2 sign">
+<div id="log" class="modal sign"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
 
 
 
 
-<form  class="sign-modal-content  ">
+<form  class="sign-modal-content  " role="dialog">
 
     <button class="close" title="Close Modal" id="close_log">X</button>
     <div class="container" id="con">
@@ -72,9 +73,10 @@
 </form>
 
 </div>
-<div id="id01" class="register_modal sign">
+<div id="id01" class="modal sign "  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true" >
     
-    <form  class="sign-modal-content" id="form">
+    <form  class="sign-modal-content " id="form" role="dialog">
         <button  class="close " title="Close Modal" id="sign_close">X</button>
         <div class="container" id="con">
             <div class="row">
@@ -113,6 +115,7 @@
     </form>
 
 </div>
+
 
 <div class="modal fade" id="addRecipeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -156,6 +159,27 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal " id="info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+         <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeInfo">×</button> -->
+          <h4 class="modal-title">Registerd</h4>
+        </div>
+        <div class="modal-body">
+          <p>congrats!!!!! You are Registerd successfully</p>
+        </div>
+       <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+          
+        </div> -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 <script src="assets/js/register.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/addToCart.js"></script>
+

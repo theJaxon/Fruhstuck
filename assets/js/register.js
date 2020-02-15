@@ -19,6 +19,7 @@ const sign_close= document.getElementById('sign_close');
 const loginBtnn = document.getElementById("loginBtn");
 const signBtnn = document.getElementById('signBtn');
 const logOut = document.getElementById('logoutBtn');
+const closeInfo= document.getElementById('closeInfo')
 var users;
 var loginUser="";
 var loginpass="";
@@ -47,6 +48,11 @@ function register(event) {
         users.push(userData);
         localStorage.setItem('Users', JSON.stringify(users));
         document.getElementById('id01').style.display="none";
+        document.getElementById('info').style.display="block";
+        setTimeout(function(){ document.getElementById('info').style.display="none"; }, 2000);
+        
+    
+      //  document.getElementById('info').style.display="block";
     }
     //document.getElementById('id01').style.display="none";
 
@@ -109,7 +115,7 @@ function Login(event) {
             loginpass=login_password.value;
             localStorage.setItem('loginUser', loginUser);
             localStorage.setItem('loginpass',loginpass);
-            console.log("ldddddddddd");
+            //console.log("ldddddddddd");
             
             console.log(loginUser);
 
@@ -263,11 +269,13 @@ function verifyLoginPassword() {
 
 function createLoginButton(event){
     event.preventDefault();
-    document.getElementById('log').style.display='block'
+    document.getElementById('id01').style.display="none";
+    document.getElementById('log').style.display='block';
 }
 function createSignButton(event){
     event.preventDefault();
-    document.getElementById('id01').style.display='block'
+    document.getElementById('log').style.display='none';
+    document.getElementById('id01').style.display='block';
 }
 
 
@@ -291,6 +299,8 @@ function logOutBtn(e){
 }
 
 
+
+
 user_name.addEventListener('blur', nameVerify, true);
 email.addEventListener('blur', emailVerify, true);
 password.addEventListener('blur', passwordVerify, true);
@@ -305,4 +315,5 @@ sign_close.addEventListener('click',closeSign);
 loginBtnn.addEventListener('click',createLoginButton);
 signBtnn.addEventListener('click',createSignButton);
 logoutBtn.addEventListener('click',logOutBtn);
+closeInfo.addEventListener('click',closeInfo);
 
