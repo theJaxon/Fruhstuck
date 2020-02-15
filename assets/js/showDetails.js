@@ -58,12 +58,12 @@ class Comment {
         this.comment = comment
     }
 }
-
+let commentsArr=[];
 let displayed_comments = document.getElementById("displayed_comments")
 let stored_recipes_Comments = JSON.parse(localStorage.getItem("comments"));
 if (stored_recipes_Comments) {
     let allComments = stored_recipes_Comments.all
-    let commentsArr = allComments[selectedRecipe_id]
+     commentsArr = allComments[selectedRecipe_id]
 
     for (let i = 0; i < commentsArr.length; i++) {
         let first_comment = Object.values(commentsArr[i])

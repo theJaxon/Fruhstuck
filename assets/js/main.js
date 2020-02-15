@@ -170,11 +170,7 @@ if (stored_comments) {
     stored_comments = stored_comments["all"];
 
     comments.all = stored_comments;
-    for (let comments in stored_comments) {
 
-
-        id = comments;
-    }
 }
 
 
