@@ -9,7 +9,6 @@ class RecipeList {
 
     remove(id) {
         delete this.all[id];
-        // console.log(this.all);
     }
 
     update(id, recipe) {

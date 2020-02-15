@@ -12,36 +12,38 @@ function getUrlVars() {
     return vars;
 }
 
-let selectedRecipe_id = getUrlVars().id
+let intervalID = null;
 
-console.log(selectedRecipe_id);
+function show() {
+    if (intervalID) {
+        clearInterval(intervalID);
+    }
 
-let storedRecipes = JSON.parse(localStorage.getItem("recipes"));
+    let selectedRecipe_id = getUrlVars().id
+    let storedRecipes = JSON.parse(localStorage.getItem("recipes"));
+    let allRecipes = storedRecipes.all
+    let selectedRecipe = allRecipes[selectedRecipe_id]
+    let imgArr = selectedRecipe["images"]
+    let current_img = imgArr[0];
+    recipe_imges.src = current_img;
 
-console.log(storedRecipes);
+    intervalID = setInterval(imgSide, 2500)
+    var i = 0;
 
-let allRecipes = storedRecipes.all
+    function imgSide() {
+        if (i == imgArr.length) {
+            i = 0
+        }
+        current_img = imgArr[i]
+        recipe_imges.src = current_img
+        i++
+    }
 
-console.log(allRecipes);
 
-let selectedRecipe = allRecipes[selectedRecipe_id]
+    recipe_title.innerHTML = selectedRecipe["title"]
+    Ingredients.innerHTML = selectedRecipe["ingredients"]
+    Directions.innerHTML = selectedRecipe["directions"]
 
-console.log(selectedRecipe);
-
-let imgArr = selectedRecipe["images"]
-let current_img = imgArr[0]
-recipe_imges.src = current_img
-
-setInterval(imgSide, 1000)
-var i = 0
-function imgSide() {
-    if (i == imgArr.length) { i = 0 }
-    current_img = imgArr[i]
-    recipe_imges.src = current_img
-    i++
 }
 
-
-recipe_title.innerHTML = selectedRecipe["title"]
-Ingredients.innerHTML = selectedRecipe["details"]
-Directions.innerHTML
+show();

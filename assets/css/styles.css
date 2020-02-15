@@ -34,7 +34,7 @@
     color: #FFFFFF;
     font-weight: bold;
     border-radius: 25px;
-    padding: 5px 30px;
+    padding: 8px 30px;
 
 }
 
@@ -417,9 +417,6 @@ width: 80%;
 hr {
   border: 2px solid #f1f1f1;
   margin-bottom: 20px;
-}
-#logoutBtn{
-  display: none;
 }
 
 

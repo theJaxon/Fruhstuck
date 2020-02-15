@@ -105,6 +105,8 @@ function Login(event) {
             document.getElementById('signBtn').style.display="none";
             document.getElementById('log').style.display="none";
             document.getElementById('logoutBtn').style.display="block";
+            document.getElementById('add-recipe-modal').style.display="block";
+
             loginUser=login_user.value;
             loginpass=login_password.value;
             localStorage.setItem('loginUser', loginUser);
