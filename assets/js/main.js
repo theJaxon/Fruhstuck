@@ -8,7 +8,17 @@ let images_output = document.getElementById("resultImgs");
 let all_images = [];
 let recipes_div = document.getElementById("recipes");
 let recipes = new RecipeList();
+/**********************************************************************/
+// add comment list
+//if (!localStorage.comments) {
+let comments = new CommentList();
+//} else {
+//    new CommentList() = JSON.parse(localStorage.comments)
+//}
+/**********************************************************************/
+// add recipe event listener
 document.getElementById("add_recipe").addEventListener("click", addRecipe);
+
 images.addEventListener("change", previewImages);
 let id = 1;
 
@@ -17,9 +27,13 @@ function addRecipe(event) {
     event.preventDefault();
     // check all recipe data are valid
     if (validateRecipe()) {
-        let recipe = new Recipe(id, all_images, title.value, ingredients.value,directions.value);
+        let recipe = new Recipe(id, all_images, title.value, ingredients.value, directions.value);
 
         recipes.add(recipe);
+        /**********************************************************************/
+        //add recipe ID to comments list
+        comments.add(recipe);
+        /**********************************************************************/
         // save recipes list to local storage
         saveRecipes();
         // view the new recipe in the html page
@@ -108,7 +122,7 @@ function cleanRecipeModal() {
 
 // append recipe to the html page
 function appendRecipe(recipe) {
-    if(recipes_div){
+    if (recipes_div) {
         let hidden_recipes = recipes_div.getElementsByClassName("recipe");
         if (hidden_recipes.length > 0) {
             let recipeCopy = hidden_recipes[0].cloneNode(true);
@@ -125,117 +139,42 @@ function appendRecipe(recipe) {
 
 function saveRecipes() {
     localStorage.setItem("recipes", JSON.stringify({all: recipes.all}));
-    let recipeCopy = recipes_div.getElementsByClassName("recipe")[0].cloneNode(true);
-    recipeCopy.removeAttribute("hidden");
-    recipeCopy.getElementsByTagName("img")[0].src = recipe.images[0];
-    recipeCopy.getElementsByTagName("h5")[0].innerHTML = recipe.title;
-    recipeCopy.getElementsByClassName("recipeButton")[0].href = "details.html?id=" + recipe.id;
-    recipeCopy.setAttribute("recipe_id", recipe.id);
-    recipes_div.prepend(recipeCopy);
-
+    /**********************************************************************/
+    // store comments in local storage
+    localStorage.setItem("comments", JSON.stringify({all: comments.all}));
+    /**********************************************************************/
 }
-
-
-
 
 
 let stored_recipes = JSON.parse(localStorage.getItem("recipes"));
 if (stored_recipes) {
     stored_recipes = stored_recipes["all"];
-
-
     recipes.all = stored_recipes;
     for (let recipe in stored_recipes) {
         appendRecipe(stored_recipes[recipe]);
         id = recipe;
     }
 }
+/********************************************************** */
+let stored_comments = JSON.parse(localStorage.getItem("comments"));
+
+if (stored_comments) {
+    stored_comments = stored_comments["all"];
+
+    comments.all = stored_comments;
+    for (let comments in stored_comments) {
+
+        if (authUser.getAuthUser()) {
+            document.getElementById('loginBtn').style.display = "none";
+            document.getElementById('signBtn').style.display = "none";
+        } else {
+            document.getElementById('logoutBtn').style.display = "none";
+            document.getElementById('add-recipe-modal').style.display = "none";
 
 
+            id = comments;
+        }
+    }
+}
 
-//
-// class Main {
-//     title = document.getElementById("title");
-//     details = document.getElementById("details");
-//     images = document.getElementById("images");
-//     images_output = document.getElementById("resultImgs");
-//     all_images=[];
-//     all_recipes=new RecipeList();
-//     constructor() {
-//
-//     }
-//
-//     validateRecipe() {
-//         let valid = true;
-//
-//         // validate images
-//         if (this.images_output.innerHTML === "") {
-//             this.images_output.nextElementSibling.style.display = "block";
-//             valid = false;
-//         } else {
-//             this.images_output.nextElementSibling.style.display = "none";
-//         }
-//
-//         // validate title
-//         if (this.title.value === "") {
-//             this.title.nextElementSibling.style.display = "block";
-//             valid = false;
-//         } else {
-//             this.title.nextElementSibling.style.display = "none";
-//         }
-//
-//         // validate details
-//         if (this.details.value === "") {
-//             this.details.nextElementSibling.style.display = "block";
-//             valid = false;
-//         } else {
-//             this.details.nextElementSibling.style.display = "none";
-//         }
-//
-//         return valid;
-//     }
-//
-//     addRecipe(event) {
-//         event.preventDefault();
-//         if (this.validateRecipe()) {
-//             alert("done");
-//         }
-//     }
-//
-//
-//
-//
-//
-//
-//     previewImages(event) {
-//         this.images_output.innerHTML="";
-//         let files = event.target.files; //FileList object
-//         for (let i = 0; i < files.length; i++) {
-//             let file = files[i];
-//             //Only pics
-//             if (file.type.match('image'))
-//             {
-//                 let picReader = new FileReader();
-//                 picReader.addEventListener("load", readerLoad);
-//
-//                 function readerLoad(event) {
-//                     let picFile = event.target;
-//                     let div = document.createElement("div");
-//                     div.classList.add("preview");
-//                     div.innerHTML = "<img class='thumbnail preview-img' src='" + picFile.result + "'" +
-//                         "title='" + picFile.name + "'/>";
-//                     this.images_output.insertBefore(div, null);
-//                     this.all_images.push(picFile.result);
-//                 }
-//
-//                 //Read the image
-//                 picReader.readAsDataURL(file);
-//             }
-//
-//         }
-//     }
-// }
-//
-// let main=new Main();
-// document.getElementById("add_recipe").addEventListener("click", main.addRecipe);
-// main.images.addEventListener("change", main.previewImages);
+

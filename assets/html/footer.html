@@ -122,7 +122,7 @@ aria-hidden="true" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">new Recipe</h5>
+                <h5 class="modal-title" id="recipeModalLabel">new Recipe</h5>
                 <button type="button" id="closeRecipeModal" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -155,11 +155,13 @@ aria-hidden="true" >
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" id="add_recipe" class="btn btn-primary">Add Recipe</button>
+                <button type="submit" id="update_recipe" style="display: none" class="btn btn-success">Update</button>
             </div>
         </div>
     </div>
 </div>
 
+<!--after register-->
 
 <div class="modal " id="info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 aria-hidden="true">
@@ -179,6 +181,8 @@ aria-hidden="true">
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
+
+<script src="assets/js/User.js"></script>
 <script src="assets/js/register.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/addToCart.js"></script>
