@@ -3,7 +3,6 @@ let recipe_title = document.getElementById("recipe_title")
 let Ingredients = document.getElementById("Ingredients")
 let Directions = document.getElementById("Directions")
 
-
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
@@ -47,3 +46,41 @@ function show() {
 }
 
 show();
+
+
+/********************************************************************************** */
+
+
+
+class Comment {
+    constructor(loginUser, comment) {
+        this.User = loginUser
+        this.comment = comment
+    }
+}
+let stored_recipes_Comments = JSON.parse(localStorage.getItem("comments"));
+let allComments = stored_recipes_Comments.all
+let commentsArr = allComments[selectedRecipe_id]
+
+let add_comment = document.getElementById("add-comment")
+let commentInput = document.getElementById("comment_text")
+let displayed_comments = document.getElementById("displayed_comments")
+
+for (let i = 0; i < commentsArr.length; i++) {
+    let first_comment = Object.values(commentsArr[i])
+    displayed_comments.innerHTML += `<li><b>${first_comment[0]}</b>: ${first_comment[1]}</li>`
+}
+
+add_comment.onclick = (e) => {
+
+    let loginUser = localStorage.getItem("loginUser")
+    let commentText = commentInput.value
+    let New_Comment = new Comment(loginUser, commentText)
+    commentsArr.push(New_Comment)
+
+    let last_comment = Object.values(commentsArr[commentsArr.length - 1])
+    displayed_comments.innerHTML += `<li><b>${last_comment[0]}</b>: ${last_comment[1]}</li>`
+
+    commentInput.value = ""
+    localStorage.comments = JSON.stringify(stored_recipes_Comments)
+}

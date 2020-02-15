@@ -13,25 +13,25 @@ const login = document.getElementById('login');
 const checkbox = document.getElementById('checkbox');
 const userLogin_error = document.getElementById('userLogin_error');
 const passwordLogin_error = document.getElementById('passwordLogin_error');
-const loginBtn=document.getElementById('loginBtn')
-const close_log=document.getElementById('close_log');
-const sign_close= document.getElementById('sign_close');
+const loginBtn = document.getElementById('loginBtn')
+const close_log = document.getElementById('close_log');
+const sign_close = document.getElementById('sign_close');
 const loginBtnn = document.getElementById("loginBtn");
 const signBtnn = document.getElementById('signBtn');
 const logOut = document.getElementById('logoutBtn');
 var users;
-var loginUser="";
-var loginpass="";
-const emailRegix=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var loginUser = "";
+var loginpass = "";
+const emailRegix = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
 function register(event) {
-    
-   
-    
+
+
+
     event.preventDefault();
     ValidateRegister();
-    
+
     //localStorage.setItem('user_name', user_name.value);
     //localStorage.setItem('email', email.value);
     //localStorage.setItem('password', password.value);
@@ -46,7 +46,7 @@ function register(event) {
 
         users.push(userData);
         localStorage.setItem('Users', JSON.stringify(users));
-        document.getElementById('id01').style.display="none";
+        document.getElementById('id01').style.display = "none";
     }
     //document.getElementById('id01').style.display="none";
 
@@ -57,7 +57,7 @@ function register(event) {
 
 function Login(event) {
     validateLogin()
-  event.preventDefault();
+    event.preventDefault();
 
     var flag = false;
 
@@ -65,12 +65,12 @@ function Login(event) {
         var retriveData = [];
 
         retriveData = JSON.parse(localStorage.getItem('Users'));
-        
+
 
 
         for (var i = 0; i < retriveData.length; i++) {
 
-           // console.log(retriveData[i].Username);
+            // console.log(retriveData[i].Username);
             //console.log(retriveData[i].Password);
             //console.log(login_password.value);
             //console.log(login_user.value);
@@ -99,8 +99,7 @@ function Login(event) {
 
         }
         if (flag == true) {
-            
-            
+
             document.getElementById('loginBtn').style.display="none";
             document.getElementById('signBtn').style.display="none";
             document.getElementById('log').style.display="none";
@@ -111,18 +110,11 @@ function Login(event) {
             loginpass=login_password.value;
             localStorage.setItem('loginUser', loginUser);
             localStorage.setItem('loginpass',loginpass);
-            console.log("ldddddddddd");
-            
-            console.log(loginUser);
 
-            console.log(loginpass);
-            
-
-            
         }
         else {
-            alert("Error");
-            document.getElementById('log').style.display="none";
+            // alert("Error");
+            document.getElementById('log').style.display = "none";
         }
     }
 }
@@ -154,7 +146,7 @@ function ValidateRegister() {
         email.focus();
         return false;
     }
-    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))){
+    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))) {
         email.style.border = "1px solid red";
 
         email_error.textContent = "email not valid";
@@ -189,7 +181,7 @@ function nameVerify() {
 }
 
 function emailVerify() {
-    if (email.value != "" ) {
+    if (email.value != "") {
         email.style.border = "1px solid blue";
 
         email_error.innerHTML = "";
@@ -197,15 +189,13 @@ function emailVerify() {
 
     }
 }
-function ValidateEmail() 
-{
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
-  {
-    email.style.border = "1px solid blue";
+function ValidateEmail() {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+        email.style.border = "1px solid blue";
 
-    email_error.innerHTML = "";
-    return (true)
-  }
+        email_error.innerHTML = "";
+        return (true)
+    }
 }
 
 function passwordVerify() {
@@ -215,7 +205,7 @@ function passwordVerify() {
         return true;
     }
 }
-    function confirmVerify(){
+function confirmVerify() {
     if (password.value == confirm_password.value) {
         password.style.border = "1px solid blue";
 
@@ -263,30 +253,30 @@ function verifyLoginPassword() {
     }
 }
 
-function createLoginButton(event){
+function createLoginButton(event) {
     event.preventDefault();
-    document.getElementById('log').style.display='block'
+    document.getElementById('log').style.display = 'block'
 }
-function createSignButton(event){
+function createSignButton(event) {
     event.preventDefault();
-    document.getElementById('id01').style.display='block'
-}
-
-
-function closeLog(event){
-    event.preventDefault();
-    document.getElementById('log').style.display='none';
+    document.getElementById('id01').style.display = 'block'
 }
 
-function closeSign(event){
+
+function closeLog(event) {
     event.preventDefault();
-    document.getElementById('id01').style.display='none';
+    document.getElementById('log').style.display = 'none';
 }
-function logOutBtn(e){
+
+function closeSign(event) {
+    event.preventDefault();
+    document.getElementById('id01').style.display = 'none';
+}
+function logOutBtn(e) {
     e.preventDefault();
-    document.getElementById('logoutBtn').style.display="none";
-    document.getElementById('loginBtn').style.display="inline-block";
-    document.getElementById('signBtn').style.display="inline-block";
+    document.getElementById('logoutBtn').style.display = "none";
+    document.getElementById('loginBtn').style.display = "inline-block";
+    document.getElementById('signBtn').style.display = "inline-block";
     localStorage.removeItem('loginUser');
     localStorage.removeItem('loginpass');
 
@@ -302,9 +292,9 @@ login_user.addEventListener('blur', verifyLoginUser, true);
 
 sign_up.addEventListener("click", register);
 login.addEventListener("click", Login);
-close_log.addEventListener("click",closeLog);
-sign_close.addEventListener('click',closeSign);
-loginBtnn.addEventListener('click',createLoginButton);
-signBtnn.addEventListener('click',createSignButton);
-logoutBtn.addEventListener('click',logOutBtn);
+close_log.addEventListener("click", closeLog);
+sign_close.addEventListener('click', closeSign);
+loginBtnn.addEventListener('click', createLoginButton);
+signBtnn.addEventListener('click', createSignButton);
+logoutBtn.addEventListener('click', logOutBtn);
 

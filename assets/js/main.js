@@ -8,7 +8,17 @@ let images_output = document.getElementById("resultImgs");
 let all_images = [];
 let recipes_div = document.getElementById("recipes");
 let recipes = new RecipeList();
+/**********************************************************************/
+// add comment list
+//if (!localStorage.comments) {
+let comments = new CommentList();
+//} else {
+//    new CommentList() = JSON.parse(localStorage.comments)
+//}
+/**********************************************************************/
+// add recipe event listener
 document.getElementById("add_recipe").addEventListener("click", addRecipe);
+
 images.addEventListener("change", previewImages);
 let id = 1;
 
@@ -17,9 +27,13 @@ function addRecipe(event) {
     event.preventDefault();
     // check all recipe data are valid
     if (validateRecipe()) {
-        let recipe = new Recipe(id, all_images, title.value, ingredients.value,directions.value);
+        let recipe = new Recipe(id, all_images, title.value, ingredients.value, directions.value);
 
         recipes.add(recipe);
+        /**********************************************************************/
+        //add recipe ID to comments list
+        comments.add(recipe);
+        /**********************************************************************/
         // save recipes list to local storage
         saveRecipes();
         // view the new recipe in the html page
@@ -108,7 +122,7 @@ function cleanRecipeModal() {
 
 // append recipe to the html page
 function appendRecipe(recipe) {
-    if(recipes_div){
+    if (recipes_div) {
         let hidden_recipes = recipes_div.getElementsByClassName("recipe");
         if (hidden_recipes.length > 0) {
             let recipeCopy = hidden_recipes[0].cloneNode(true);
@@ -125,10 +139,11 @@ function appendRecipe(recipe) {
 
 function saveRecipes() {
     localStorage.setItem("recipes", JSON.stringify({all: recipes.all}));
+    /**********************************************************************/
+    // store comments in local storage
+    localStorage.setItem("comments", JSON.stringify({all: comments.all}));
+    /**********************************************************************/
 }
-
-
-
 
 
 let stored_recipes = JSON.parse(localStorage.getItem("recipes"));
@@ -140,13 +155,26 @@ if (stored_recipes) {
         id = recipe;
     }
 }
+/********************************************************** */
+let stored_comments = JSON.parse(localStorage.getItem("comments"));
 
-if(authUser.getAuthUser()){
-    document.getElementById('loginBtn').style.display="none";
-    document.getElementById('signBtn').style.display="none";
-}else{
-    document.getElementById('logoutBtn').style.display="none";
-    document.getElementById('add-recipe-modal').style.display="none";
+if (stored_comments) {
+    stored_comments = stored_comments["all"];
 
+    comments.all = stored_comments;
+    for (let comments in stored_comments) {
+
+        if (authUser.getAuthUser()) {
+            document.getElementById('loginBtn').style.display = "none";
+            document.getElementById('signBtn').style.display = "none";
+        } else {
+            document.getElementById('logoutBtn').style.display = "none";
+            document.getElementById('add-recipe-modal').style.display = "none";
+
+
+            id = comments;
+        }
+    }
 }
+
 
