@@ -131,6 +131,7 @@ function appendRecipe(recipe) {
             recipeCopy.getElementsByTagName("h5")[0].innerHTML = recipe.title;
             recipeCopy.getElementsByClassName("recipeButton")[0].href = "details.html?id=" + recipe.id;
             recipeCopy.setAttribute("recipe_id", recipe.id);
+            recipeCopy.getElementsByClassName("buyButton")[0].addEventListener("click",buyButtonClicked);
             recipes_div.prepend(recipeCopy);
         }
 
@@ -161,7 +162,8 @@ if (authUser.getAuthUser()) {
     document.getElementById('signBtn').style.display = "none";
 } else {
     document.getElementById('logoutBtn').style.display = "none";
-    document.getElementById('add-recipe-modal').style.display = "none";
+    // document.getElementById('add-recipe-modal').style.display = "none";
+    // document.getElementById('cartPanel').style.display = "none";
 }
 
 let stored_comments = JSON.parse(localStorage.getItem("comments"));

@@ -115,6 +115,7 @@ function Login(event) {
             document.getElementById('log').style.display="none";
             document.getElementById('logoutBtn').style.display="block";
             document.getElementById('add-recipe-modal').style.display="block";
+            document.getElementById('cartPanel').style.display = "block";
 
             loginUser=login_user.value;
             loginpass=login_password.value;
