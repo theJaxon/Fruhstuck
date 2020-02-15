@@ -320,6 +320,7 @@ sign_close.addEventListener('click',closeSign);
 loginBtnn.addEventListener('click',createLoginButton);
 signBtnn.addEventListener('click',createSignButton);
 logoutBtn.addEventListener('click',logOutBtn);
-closeInfo.addEventListener('click',closeInfo);
+if(closeInfo)
+    closeInfo.addEventListener('click',closeInfo);
 
 
