@@ -156,6 +156,14 @@ if (stored_recipes) {
     }
 }
 /********************************************************** */
+if (authUser.getAuthUser()) {
+    document.getElementById('loginBtn').style.display = "none";
+    document.getElementById('signBtn').style.display = "none";
+} else {
+    document.getElementById('logoutBtn').style.display = "none";
+    document.getElementById('add-recipe-modal').style.display = "none";
+}
+
 let stored_comments = JSON.parse(localStorage.getItem("comments"));
 
 if (stored_comments) {
@@ -164,16 +172,8 @@ if (stored_comments) {
     comments.all = stored_comments;
     for (let comments in stored_comments) {
 
-        if (authUser.getAuthUser()) {
-            document.getElementById('loginBtn').style.display = "none";
-            document.getElementById('signBtn').style.display = "none";
-        } else {
-            document.getElementById('logoutBtn').style.display = "none";
-            document.getElementById('add-recipe-modal').style.display = "none";
 
-
-            id = comments;
-        }
+        id = comments;
     }
 }
 
