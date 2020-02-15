@@ -46,23 +46,34 @@
     <div class="">
         <div>
                 <span>
-                     <button type="button" class="login" id="updateRecipe"> Update Recipe </button>
-                    <a class="delete" id="deleteRecipe" style="color: #FFFFFF">Remove Recipe</a>
+                     <button type="button" class="login" id="updateRecipe"> 
+                         <i class="fa fa-edit"></i> Update Recipe 
+                    </button>
+                    <button type="button" class="delete" id="deleteRecipe">
+                        <i class="fa fa-remove"></i> Remove Recipe
+                    </button>
                 </span>
 
             </div>
             <hr>
-            <div class="comment-section">
-                <ul id="displayed_comments">
 
-                </ul>
-            </div>
 
-            <div>
-                <input id="comment_text" style="border:1px solid #3326ae;" type="text" placeholder="Add New Comment"
-                    size="115">
-                <button id="add-comment">comment</button>
-            </div>
+            <form>
+                <div class="form-group commentForm">
+                    <label for="exampleFormControlTextarea1">
+                        <i class="fa fa-comments"></i> Comment section
+                    </label>
+                    <textarea class="form-control commentSection" id="displayed_comments" rows="3" readonly></textarea>
+                </div>
+
+                <div class="form-group userComment">
+                    <input type="text" class="form-control" id="comment_text" placeholder="Enter your comment here">
+                </div>
+                <button id="add-comment">
+                    <i class="fa fa-comments-o"></i> Comment
+                </button>
+            </form>
+
         </div>
         <hr>
     </div>
