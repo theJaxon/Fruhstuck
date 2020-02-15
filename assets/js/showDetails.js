@@ -12,13 +12,14 @@ function getUrlVars() {
 }
 
 let intervalID = null;
+let selectedRecipe_id;
 
 function show() {
     if (intervalID) {
         clearInterval(intervalID);
     }
 
-    let selectedRecipe_id = getUrlVars().id
+    selectedRecipe_id = getUrlVars().id
     let storedRecipes = JSON.parse(localStorage.getItem("recipes"));
     let allRecipes = storedRecipes.all
     let selectedRecipe = allRecipes[selectedRecipe_id]
@@ -51,25 +52,29 @@ show();
 /********************************************************************************** */
 
 
-
 class Comment {
     constructor(loginUser, comment) {
         this.User = loginUser
         this.comment = comment
     }
 }
+
+let displayed_comments = document.getElementById("displayed_comments")
 let stored_recipes_Comments = JSON.parse(localStorage.getItem("comments"));
-let allComments = stored_recipes_Comments.all
-let commentsArr = allComments[selectedRecipe_id]
+if (stored_recipes_Comments) {
+    let allComments = stored_recipes_Comments.all
+    let commentsArr = allComments[selectedRecipe_id]
+
+    for (let i = 0; i < commentsArr.length; i++) {
+        let first_comment = Object.values(commentsArr[i])
+        displayed_comments.innerHTML += `<li><b>${first_comment[0]}</b>: ${first_comment[1]}</li>`
+    }
+}
+
 
 let add_comment = document.getElementById("add-comment")
 let commentInput = document.getElementById("comment_text")
-let displayed_comments = document.getElementById("displayed_comments")
 
-for (let i = 0; i < commentsArr.length; i++) {
-    let first_comment = Object.values(commentsArr[i])
-    displayed_comments.innerHTML += `<li><b>${first_comment[0]}</b>: ${first_comment[1]}</li>`
-}
 
 add_comment.onclick = (e) => {
 
@@ -83,4 +88,4 @@ add_comment.onclick = (e) => {
 
     commentInput.value = ""
     localStorage.comments = JSON.stringify(stored_recipes_Comments)
-}
+};
