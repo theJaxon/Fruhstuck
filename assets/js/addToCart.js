@@ -62,7 +62,6 @@ function deleteButtonClicked(e) {
     //remove the row from UI
     var link = e.target.parentNode;
     let recipe_id=link.getAttribute("recipe_id");
-    console.log(recipe_id);
     delete storageList[recipe_id];
     localStorage.setItem("buyList", JSON.stringify(storageList));
     link.parentNode.removeChild(link);

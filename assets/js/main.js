@@ -162,8 +162,8 @@ if (authUser.getAuthUser()) {
     document.getElementById('signBtn').style.display = "none";
 } else {
     document.getElementById('logoutBtn').style.display = "none";
-    // document.getElementById('add-recipe-modal').style.display = "none";
-    // document.getElementById('cartPanel').style.display = "none";
+    document.getElementById('add-recipe-modal').style.display = "none";
+    document.getElementById('cartPanel').style.display = "none";
 }
 
 let stored_comments = JSON.parse(localStorage.getItem("comments"));
