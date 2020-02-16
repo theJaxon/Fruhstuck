@@ -177,4 +177,3 @@ if (stored_comments) {
 
 }
 
-

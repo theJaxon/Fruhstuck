@@ -325,3 +325,4 @@ if(closeInfo)
     closeInfo.addEventListener('click',closeInfo);
 
 
+// Swal.fire('Any fool can use a computer')
