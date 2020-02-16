@@ -165,7 +165,14 @@ if (authUser.getAuthUser()) {
     let recipe_modal=document.getElementById('add-recipe-modal');
     if(recipe_modal)
         recipe_modal.style.display = "none";
+    let updateRecipe=document.getElementById('updateRecipe');
+    if(updateRecipe)
+        updateRecipe.style.display = "none";
+    let deleteRecipe=document.getElementById('deleteRecipe');
+    if(deleteRecipe)
+        deleteRecipe.style.display = "none";
     document.getElementById('cartPanel').style.display = "none";
+
 }
 
 let stored_comments = JSON.parse(localStorage.getItem("comments"));

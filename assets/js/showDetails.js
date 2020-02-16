@@ -21,28 +21,31 @@ function show() {
 
     selectedRecipe_id = getUrlVars().id
     let storedRecipes = JSON.parse(localStorage.getItem("recipes"));
-    let allRecipes = storedRecipes.all
-    let selectedRecipe = allRecipes[selectedRecipe_id]
-    let imgArr = selectedRecipe["images"]
-    let current_img = imgArr[0];
-    recipe_imges.src = current_img;
+    if(storedRecipes){
+        let allRecipes = storedRecipes.all
+        let selectedRecipe = allRecipes[selectedRecipe_id]
+        let imgArr = selectedRecipe["images"]
+        let current_img = imgArr[0];
+        recipe_imges.src = current_img;
 
-    intervalID = setInterval(imgSide, 2500)
-    var i = 0;
+        intervalID = setInterval(imgSide, 2500)
+        var i = 0;
 
-    function imgSide() {
-        if (i == imgArr.length) {
-            i = 0
+        function imgSide() {
+            if (i == imgArr.length) {
+                i = 0
+            }
+            current_img = imgArr[i]
+            recipe_imges.src = current_img
+            i++
         }
-        current_img = imgArr[i]
-        recipe_imges.src = current_img
-        i++
+
+
+        recipe_title.innerHTML = selectedRecipe["title"]
+        Ingredients.innerHTML = selectedRecipe["ingredients"]
+        Directions.innerHTML = selectedRecipe["directions"]
     }
 
-
-    recipe_title.innerHTML = selectedRecipe["title"]
-    Ingredients.innerHTML = selectedRecipe["ingredients"]
-    Directions.innerHTML = selectedRecipe["directions"]
 
 }
 
