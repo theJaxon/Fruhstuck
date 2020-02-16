@@ -120,15 +120,21 @@ function Login(event) {
             loginUser=login_user.value;
             loginpass=login_password.value;
             localStorage.setItem('loginUser', loginUser);
-            localStorage.setItem('loginpass',loginpass);
+           // localStorage.setItem('loginpass',loginpass);
 
             
             
 
         }
         else {
-            // alert("Error");
-            document.getElementById('log').style.display = "none";
+            Swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+              )
+            passwordLogin_error.textContent = "The username or password is incorrect";
+           // setTimeout(function(){ document.getElementById('log').style.display="none"; }, 2000);
+           // document.getElementById('log').style.display = "none";
         }
     }
 }
