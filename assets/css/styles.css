@@ -612,3 +612,37 @@ hr {
 #logoutBtn{
   border-radius: 15px;
 }
+
+/*
+contact.html 
+*/
+.panel{
+  border-radius: 10px;
+}
+
+.mailButton{
+  border-radius: 20px;
+  font-family: GothamRoundedLight;
+}
+
+.fa-caret-right{
+  font-size: 20px;
+}
+
+.mailButton:hover{
+  color: white;
+  background-color: #6C71CC ;
+}
+
+.mailButton:hover .fa-caret-right{
+  color: #FDBA13;
+}
+
+.fa-inbox{
+  font-size: 60px;
+}
+
+#hear{
+  font-family: GothamRoundedLight;
+
+}
