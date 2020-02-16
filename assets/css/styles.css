@@ -657,3 +657,19 @@ contact.html
 .fa-phone{
   color: #394D85;
 }
+
+#ingList li {
+  list-style-type: none;
+}
+
+#add-comment_default
+{
+    background-color: #3326ae;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-left: 2.5%;
+    font-family: GothamRoundedLight;
+    border-style: none;
+    padding: 5px 55px;
+}

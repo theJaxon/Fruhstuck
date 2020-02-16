@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>fruhstuck</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <!--Header content will be loaded here-->
+    </div>
+
+    <!-- =========================================================================== -->
+    <div class="container">
+
+        <div class="details-row">
+
+
+            <div class="column">
+                <img style="height:300px; width: 500px; border-radius: 15px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); "
+                    id="recipe_img" class="thumbnail" src="assets\Images\Food2.jpg">
+
+                <h4 id="recipe_title" style="padding-left: 250px; margin-top: 10px;">LO MEIN</h4>
+
+
+            </div>
+
+
+            <h4> Ingredients </h4>
+
+            <p id="Ingredients">
+                <ul id="ingList">
+                    <li>8 ounces lo mein egg noodles*</li>
+                    <li>1 tablespoon olive oil</li>
+                    <li>2 cloves garlic, minced</li>
+                    <li>2 cups cremini mushrooms, sliced</li>
+                    <li>1 red bell pepper, julienned</li>
+                    <li>1 carrot, julienned</li>
+                    <li>1/2 cup snow peas</li>
+                    <li>3 cups baby spinach</li>
+                </ul>
+            </p>
+
+
+            <h4> Directions </h4>
+
+            <p id="Directions">
+                <ol>
+                    <li>In a small bowl, whisk together soy sauce, sugar, sesame oil, ginger and Sriracha; set aside.
+                    </li>
+                    <li>In a large pot of boiling water, cook noodles according to package instructions; drain well.
+                    </li>
+                    <li>Heat olive oil in a large skillet or wok over medium high heat. Add garlic, mushrooms, bell
+                        pepper and carrot. Cook, stirring frequently, until tender, about 3-4 minutes. Stir in snow peas
+                        and spinach until the spinach has wilted, about 2-3 minutes.</li>
+                    <li>Stir in egg noodles and soy sauce mixture, and gently toss to combine.</li>
+                    <li>Serve immediately.</li>
+                </ol>
+                </ol>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="">
+        <div>
+            <span>
+                <button type="button" class="login" id="updateRecipe">
+                    <i class="fa fa-edit"></i> Update Recipe
+                </button>
+                <button type="button" class="delete" id="deleteRecipe">
+                    <i class="fa fa-remove"></i> Remove Recipe
+                </button>
+            </span>
+
+        </div>
+        <hr>
+
+
+        <form>
+            <div class="form-group commentForm">
+                <label for="exampleFormControlTextarea1">
+                    <i class="fa fa-comments"></i> Comment section
+                </label>
+                <textarea class="form-control commentSection" id="displayed_comments" rows="3" readonly></textarea>
+            </div>
+
+            <div class="form-group userComment">
+                <input type="text" class="form-control" id="comment_text_default" placeholder="Enter your comment here">
+            </div>
+            <button id="add-comment_default">
+                <i class="fa fa-comments-o"></i> Comment
+            </button>
+        </form>
+
+    </div>
+    <hr>
+    </div>
+
+
+    </div>
+
+
+    <!-- =========================================================================== -->
+    <div id="footer">
+        <!--Footer content loaded with JQuery + LiveReload-->
+    </div>
+
+    <script src="assets/js/loadHeaderFooter.js"></script>
+    <script src="assets/js/showDetails.js"></script>
+    <script src="assets/js/details.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.19.0/dist/sweetalert2.all.min.js"></script>
+</body>
+
+</html>
