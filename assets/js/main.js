@@ -162,7 +162,9 @@ if (authUser.getAuthUser()) {
     document.getElementById('signBtn').style.display = "none";
 } else {
     document.getElementById('logoutBtn').style.display = "none";
-    document.getElementById('add-recipe-modal').style.display = "none";
+    let recipe_modal=document.getElementById('add-recipe-modal');
+    if(recipe_modal)
+        recipe_modal.style.display = "none";
     document.getElementById('cartPanel').style.display = "none";
 }
 
@@ -174,5 +176,4 @@ if (stored_comments) {
     comments.all = stored_comments;
 
 }
-
 

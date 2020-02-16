@@ -167,6 +167,7 @@
 
 .recipeButton:hover{
   background-color: #6C71CC;
+  
 }
 
 .recipeButton:hover .fa-chevron-right{
@@ -175,6 +176,7 @@
 
 .buyButton{
   background-color: #FF4F96;
+  color: white !important;
   border-radius: 25px;
   border-style: none;
   padding: 10px 25px;
@@ -206,6 +208,7 @@
 .buyButton:hover .fa-cart-plus{
   display: inline;
   font-size: 20px;
+  color: #02081B;
 }
 
 .buyButton:hover .fa-shopping-cart{
@@ -611,4 +614,46 @@ hr {
 
 #logoutBtn{
   border-radius: 15px;
+}
+
+/*
+contact.html 
+*/
+.panel{
+  border-radius: 10px;
+}
+
+.mailButton{
+  border-radius: 20px;
+  font-family: GothamRoundedLight;
+}
+
+.fa-caret-right{
+  font-size: 20px;
+}
+
+.mailButton:hover{
+  color: white;
+  background-color: #6C71CC ;
+}
+
+.mailButton:hover .fa-caret-right{
+  color: #FDBA13;
+}
+
+.fa-inbox{
+  font-size: 60px;
+}
+
+#hear{
+  font-family: GothamRoundedLight;
+
+}
+
+.fa-cube{
+  color: #2753B2;
+}
+
+.fa-phone{
+  color: #394D85;
 }

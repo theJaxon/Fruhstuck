@@ -36,8 +36,9 @@ function buyButtonClicked() {
             storageList[i]["qty"] +
             "<button class=\"pull-right delButton\" style=\"margin: 0px; padding: 0px 10px; border-radius: 5px; color: white; background-color: #F9366C;   font-family: GothamRoundedLight;\">x</button>" +
             "</a>"
-    }
 
+    }
+addDelBtnEvent();
 }
 
 for (i in storageList) {
@@ -51,10 +52,14 @@ for (i in storageList) {
 }
 
 /* Delete functionality */
-var deleteButtonList = document.getElementsByClassName("delButton");
-for (let i = 0; i < deleteButtonList.length; i++) {
-    deleteButtonList[i].addEventListener("click", deleteButtonClicked);
+function addDelBtnEvent() {
+    var deleteButtonList = document.getElementsByClassName("delButton");
+    for (let i = 0; i < deleteButtonList.length; i++) {
+        deleteButtonList[i].addEventListener("click", deleteButtonClicked);
+    }
 }
+
+addDelBtnEvent();
 
 function deleteButtonClicked(e) {
     e.preventDefault();

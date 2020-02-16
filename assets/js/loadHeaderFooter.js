@@ -3,3 +3,4 @@ $(function(){
     $("#footer").load("assets/html/footer.html"); 
     $("#scripts").load("assets/html/scripts.html");
   });
+
