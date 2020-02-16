@@ -58,13 +58,13 @@ class Comment {
         this.comment = comment
     }
 }
-let commentsArr=[];
+let commentsArr = [];
 
 let displayed_comments = document.getElementById("displayed_comments")
 let stored_recipes_Comments = JSON.parse(localStorage.getItem("comments"));
 if (stored_recipes_Comments) {
     let allComments = stored_recipes_Comments.all
-     commentsArr = allComments[selectedRecipe_id]
+    commentsArr = allComments[selectedRecipe_id]
 
     for (let i = 0; i < commentsArr.length; i++) {
         let first_comment = Object.values(commentsArr[i])
@@ -80,12 +80,19 @@ let commentInput = document.getElementById("comment_text")
 add_comment.onclick = (e) => {
     e.preventDefault();
     let loginUser = localStorage.getItem("loginUser")
+    if (loginUser == null) {
+        alert("You need to be logged to comment")
+        return null
+    }
     let commentText = commentInput.value
+    if (commentText == "") {
+        return null
+    }
     let New_Comment = new Comment(loginUser, commentText)
     commentsArr.push(New_Comment)
 
     let last_comment = Object.values(commentsArr[commentsArr.length - 1])
-    displayed_comments.innerHTML += `${last_comment[0]}: ${last_comment[1]}`+ "\n"
+    displayed_comments.innerHTML += `${last_comment[0]}: ${last_comment[1]}` + "\n"
 
     commentInput.value = ""
     localStorage.comments = JSON.stringify(stored_recipes_Comments)
